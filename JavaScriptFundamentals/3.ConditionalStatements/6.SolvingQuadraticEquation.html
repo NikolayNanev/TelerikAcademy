@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Write a script that enters the coefficients a, b and c of a quadratic equation
+		a*x2 + b*x + c = 0
+		and calculates and prints its real roots. Note that quadratic equations may have 0, 1 or 2 real roots.
+    </title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="inputCoefficientA">Coefficient A: </label>
+    <input type="text" id="inputCoefficientA" />
+    <br />
+
+    <label for="inputCoefficientB">Coefficient B: </label>
+    <input type="text" id="inputCoefficientB" />
+    <br />
+
+    <label for="inputCoefficientC">Coefficient C: </label>
+    <input type="text" id="inputCoefficientC" />
+    <br />
+
+    <a href="#" onclick="solveQuadraticEquation()">Solve quadratic equation</a>
+    
+    <div id="js-console"></div>
+
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function solveQuadraticEquation() {
+            var coefficientA = jsConsole.readFloat("#inputCoefficientA");
+            var coefficientB = jsConsole.readFloat("#inputCoefficientB");
+            var coefficientC = jsConsole.readFloat("#inputCoefficientC");
+
+            if (isNaN(coefficientA) || isNaN(coefficientB) || isNaN(coefficientC)) {
+                jsConsole.writeLine("Bad input!");
+            }
+            else {
+                var discriminant = Math.pow(coefficientB, 2) - 4 * coefficientA * coefficientC;
+
+                if (coefficientA == 0 && coefficientB == 0 && coefficientC == 0) {
+                    jsConsole.writeLine("There are an infinit number of real roots!");
+                }
+                else if (discriminant < 0 || (coefficientA == 0 && coefficientB == 0 && coefficientC != 0)) {
+                    jsConsole.writeLine("There're no real roots of the quadratic equation!");
+                }
+                else if (coefficientA == 0 && coefficientB != 0) {
+                    var doubleRoot = -(coefficientC / coefficientB);
+                    jsConsole.writeLine("The equation has one real double root x1/2 = " + doubleRoot);
+                }
+                else {
+                    var firstRoot = (-coefficientB - Math.sqrt(discriminant)) / (2 * coefficientA);
+                    var secondRoot = coefficientC / (coefficientA * firstRoot);
+                    jsConsole.writeLine("The equation has two real roots x1 = " + firstRoot + " x2 = " + secondRoot);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

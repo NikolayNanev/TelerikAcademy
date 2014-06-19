@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title> 
+        Write a program that finds the most frequent number in an array. Example:
+	    {4, 1, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9, 3} -->> 4 (5 times)
+
+    </title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="inputArrayLength">Input length of array: </label>
+    <input id="inputArrayLength" />
+    <br />
+
+    <a href="#" onclick="executeScript()">Find the most frequent number</a>
+    
+    <div id="js-console"></div>
+
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function executeScript() {
+            var arrayLength = jsConsole.readInteger('#inputArrayLength');
+
+            if (isNaN(arrayLength) || arrayLength < 1) {
+                jsConsole.writeLine('Bad input');
+            }
+            else {
+                var arrayWithNumbers = generateRandomArray(arrayLength);
+
+                jsConsole.writeLine('The sequence of numbers is:');
+                var stringArray = arrayWithNumbers.join(' ');
+                jsConsole.writeLine(stringArray);
+
+                var sortedArray = selectionSort(arrayWithNumbers);
+
+                findMaxSequenceOfEqualElements(sortedArray)
+
+                jsConsole.writeLine();
+            }
+
+            function generateRandomArray(lengthOfArray) {
+                var randomArray = [];
+
+                for (var index = 0; index < lengthOfArray; index++) {
+                    randomArray[index] = Math.floor(Math.random() * 11)     //Random number from 0-10
+                }
+
+                return randomArray;
+            }
+
+            function selectionSort(array) {
+                for (var i = 0; i < array.length; i++) {
+                    for (var j = i + 1; j < array.length; j++) {
+                        var curentMinElement = array[i];
+
+                        if (array[j] <= curentMinElement) {
+                            var tempNumber = array[i];
+                            array[i] = array[j];
+                            array[j] = tempNumber;
+                        }
+                    }
+                }
+
+                return array;
+            }
+
+            function findMaxSequenceOfEqualElements(array) {
+                var lengthOfSequence = 1;
+                var lengthOfMaxSequence = 1;
+                var numberInMaxSequence = 0;
+
+                for (var i = 0; i < array.length - 1; i++) {
+                    if (array[i] == array[i + 1]) {
+                        lengthOfSequence++;
+                    }
+                    else {
+                        lengthOfSequence = 1;
+                    }
+
+                    if (lengthOfSequence > lengthOfMaxSequence) {
+                        lengthOfMaxSequence = lengthOfSequence;
+                        numberInMaxSequence = array[i];
+                    }
+                }
+
+                printMostFrequentNumber(numberInMaxSequence, lengthOfMaxSequence);
+
+                function printMostFrequentNumber(value, length) {
+                    if (length == 1) {
+                        jsConsole.writeLine('No most frequent number in the array! All numbers are diffrent !');
+                    }
+                    else {
+                        jsConsole.writeLine('The most frequent number is ' + value + '(' + length + " times)");
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

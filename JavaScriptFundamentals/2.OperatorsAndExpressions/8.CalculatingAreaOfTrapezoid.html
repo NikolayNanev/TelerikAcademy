@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Write an expression that calculates trapezoid's area by given sides a and b and height h.
+    </title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="sideAofTrapezoid">Side A: </label>
+    <input type="text" id="sideAofTrapezoid" />
+    <br />
+
+    <label for="sideBofTrapezoid">Side B: </label>
+    <input type="text" id="sideBofTrapezoid" />
+    <br />
+
+    <label for="heightHofTrapezoid">Side B: </label>
+    <input type="text" id="heightHofTrapezoid" />
+    <br />
+
+    <a href="#" onclick="findArea()">Find area of trapezoid</a>
+    
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+
+    <script>
+
+        function findArea() {
+            var sideA= jsConsole.readFloat("#sideAofTrapezoid");
+            var sideB = jsConsole.readFloat("#sideBofTrapezoid");
+            var heightH = jsConsole.readFloat("#heightHofTrapezoid");
+
+            if (sideA <= 0 || sideB <= 0 || heightH <= 0 || isNaN(sideA) || isNaN(sideB) || isNaN(heightH)) {
+                jsConsole.writeLine("Bad input!");
+            }
+            else {
+                var areaOfTrapezoid = (sideA + sideB) / 2 * heightH;
+                jsConsole.writeLine("The area of the trapezoid is: '" + areaOfTrapezoid + "'");
+            }
+        }
+
+    </script>
+</body>
+</html>

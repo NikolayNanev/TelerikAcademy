@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Write functions for working with shapes in  standard Planar coordinate system:
+            -Points are represented by coordinates P(X, Y)
+            -Lines are represented by two points, marking their beginning and ending
+                L(P1(X1,Y1), P2(X2,Y2))
+            -Calculate the distance between two points
+            -Check if three segment lines can form a triangle
+    </title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function Point(name, x, y) {
+            function toString() {
+                return String('' + name + '(' + x + ',' + y + ')');
+            }
+
+            return {
+                name: name,
+                X: x,
+                Y: y,
+                toString: toString
+            }
+        }
+
+        function Line(firstPoint, secondPoint) {
+            function calculateDistance() {
+                var distance = 0;
+                var deltaX = secondPoint.X - firstPoint.X;
+                var deltaY = secondPoint.Y - firstPoint.Y;
+
+                distance = Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
+
+                return distance;
+            }
+
+            function toString() {
+                return String('Line ' + firstPoint.name + secondPoint.name +'('+
+                    firstPoint.toString() + ', ' + secondPoint.toString() + ')');
+            }
+
+            return {
+                startPoint: firstPoint,
+                endPoint: secondPoint,
+                distance: calculateDistance,
+                toString: toString
+            }
+        }
+
+        function calculateDistance(firstPoint, secondPoint) {
+            var distance = 0;
+            var deltaX = secondPoint.X - firstPoint.X;
+            var deltaY = secondPoint.Y - firstPoint.Y;
+
+            distance = Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
+
+            return distance;
+        }
+
+        function canLinesFormTriangle(firstLine, secondLine, thirdLine) {
+            var first = firstLine.distance;
+            var second = secondLine.distance;
+            var third = thirdLine.distance;
+
+            if (first + second > third &&
+                second + third > first &&
+                third + first > second ) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+        var pointM = Point("M", 2, 2);
+        var pointN = Point("N", 5, 1);
+        var pointP = Point("P", 4, 3);
+
+        jsConsole.writeLine(pointM.toString());
+        jsConsole.writeLine(pointN.toString());
+        jsConsole.writeLine(pointP.toString());
+        jsConsole.writeLine();
+
+        var lineMN = Line(pointM, pointN);
+        var lineNP = Line(pointN, pointP);
+        var linePM = Line(pointP, pointM);
+
+        jsConsole.writeLine(lineMN.toString());
+        jsConsole.writeLine('Distance MN: ' + lineMN.distance());
+        jsConsole.writeLine('Distance MN: ' + calculateDistance(pointM, pointN));
+        jsConsole.writeLine();
+
+        var canFormTriangleMNP = canLinesFormTriangle(lineMN, lineNP, linePM);
+        jsConsole.writeLine(canFormTriangleMNP);
+    </script>
+</body>
+</html>

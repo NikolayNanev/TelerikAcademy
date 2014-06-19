@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title> 
+        Write a script that finds the maximal increasing sequence in an array. 
+        Example: {3, 2, 3, 4, 2, 2, 4} -->> {2, 3, 4}.
+    </title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="inputArrayLength">Input length of array: </label>
+    <input id="inputArrayLength" />
+    <br />
+
+    <a href="#" onclick="executeScript()">Find the max sequence of increasing elements</a>
+    
+    <div id="js-console"></div>
+
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function executeScript() {
+            var arrayLength = jsConsole.readInteger('#inputArrayLength');
+
+            if (isNaN(arrayLength) || arrayLength < 1) {
+                jsConsole.writeLine('Bad input');
+            }
+            else {
+                var arrayWithNumbers = generateRandomArray(arrayLength);
+
+                var stringArray = arrayWithNumbers.join(' ');
+
+                jsConsole.writeLine('The sequence of numbers is:');
+                jsConsole.writeLine(stringArray);
+                findMaxSequenceOfIncreasingElements(arrayWithNumbers);
+            }
+
+            function generateRandomArray(lengthOfArray) {
+                var randomArray = [];
+
+                for (var index = 0; index < lengthOfArray; index++) {
+                    randomArray[index] = Math.floor(Math.random() * 11)     //Random number from 0-10
+                }
+
+                return randomArray;
+            }
+
+            function findMaxSequenceOfIncreasingElements(array) {
+                var lengthOfSequence = 1;
+                var lengthOfMaxSequence = 1;
+                var lastNumberInSequence = 0;
+
+                for (var i = 0; i < array.length - 1; i++) {
+                    if (array[i] == array[i + 1] - 1) {
+                        lengthOfSequence++;
+                    }
+                    else {
+                        lengthOfSequence = 1;
+                    }
+
+                    if (lengthOfSequence > lengthOfMaxSequence) {
+                        lengthOfMaxSequence = lengthOfSequence;
+                        lastNumberInSequence = array[i + 1];
+                    }
+                }
+
+                printMembersOfMaxSequence(lastNumberInSequence, lengthOfMaxSequence);
+
+                function printMembersOfMaxSequence(lastNumberValue, length) {
+                    if (length == 1) {
+                        jsConsole.writeLine('No maximal sequence of increasing elements is available in the array!');
+                        jsConsole.writeLine();
+                    }
+                    else {
+                        jsConsole.writeLine('The maximal sequence of increasing elements in the array is: ');
+
+                        for (var j = length - 1; j >= 0; j--) {
+                            jsConsole.write(lastNumberValue - j + ' ');
+
+                        }
+
+                        jsConsole.writeLine();
+                        jsConsole.writeLine();
+                    }
+                } 
+            }           
+        }
+    </script>
+</body>
+</html>

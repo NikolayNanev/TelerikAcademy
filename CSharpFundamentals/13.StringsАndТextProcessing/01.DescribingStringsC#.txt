@@ -1,0 +1,37 @@
+http://msdn.microsoft.com/en-us/library/ms228362.aspx
+http://msdn.microsoft.com/en-us/library/system.string.aspx
+
+
+A string is an object of type String whose value is text. Internally, the text is stored as a sequential read-only collection of Char objects. There is no null-terminating character at the end of a C# string; therefore a C# string can contain any number of embedded null characters ('\0'). The Length property of a string represents the number of Char objects it contains, not the number of Unicode characters. To access the individual Unicode code points in a string, use the StringInfo object.
+
+In C#, the string keyword is an alias for String. Therefore, String and string are equivalent, and you can use whichever naming convention you prefer. The String class provides many methods for safely creating, manipulating, and comparing strings. In addition, the C# language overloads some operators to simplify common string operations. For more information about the keyword, see string (C# Reference). For more information about the type and its methods, see String.
+
+Constructors
+
+String(Char*)	Initializes a new instance of the String class to the value indicated by a specified pointer to an array of Unicode characters.
+
+
+String(Char[])	Initializes a new instance of the String class to the value indicated by an array of Unicode characters.	
+
+
+String(Char*, Int32, Int32)	Initializes a new instance of the String class to the value indicated by a specified pointer to an array of Unicode characters, a starting character position within that array, and a length.
+
+
+
+Methods
+
+Clone	Returns a reference to this instance of String.
+
+Compare(String, String)	Compares two specified String objects and returns an integer that indicates their relative position in the sort order.
+
+Concat(Object)	Creates the string representation of a specified object.
+
+Concat(Object[])	Concatenates the string representations of the elements in a specified Object array.
+
+Copy	Creates a new instance of String with the same value as a specified String.
+
+Insert	Returns a new string in which a specified string is inserted at a specified index position in this instance. 
+
+Join(String, Object[])  Concatenates the elements of an object array, using the specified separator between each element.
+
+и адски много други

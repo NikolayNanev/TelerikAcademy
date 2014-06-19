@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title> 
+        Write a program that finds the index of given element in a sorted array of integers by using the binary search algorithm.
+    </title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="inputArrayLength">Input length of array: </label>
+    <input id="inputArrayLength" />
+    <br />
+
+    <label for="inputSearcheValue">Input value to searche: </label>
+    <input id="inputSearcheValue" />
+    <br />
+
+    <a href="#" onclick="executeScript()">Find index of given element</a>
+    
+    <div id="js-console"></div>
+
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function executeScript() {
+            var arrayLength = jsConsole.readInteger('#inputArrayLength');
+            var valueToSearche = jsConsole.readInteger('#inputSearcheValue');
+
+            if (isNaN(arrayLength) || arrayLength < 1 || isNaN(valueToSearche)) {
+                jsConsole.writeLine('Bad input');
+            }
+            else {
+                var arrayWithNumbers = generateRandomArray(arrayLength);
+                var sortedArray = selectionSort(arrayWithNumbers);
+
+                jsConsole.writeLine('The sequence of numbers is:');
+                var stringArray = sortedArray.join(' ');
+                jsConsole.writeLine(stringArray);
+
+                   
+                binarySearch(sortedArray, valueToSearche);
+
+                jsConsole.writeLine();
+            }
+
+            function generateRandomArray(lengthOfArray) {
+                var randomArray = [];
+
+                for (var index = 0; index < lengthOfArray; index++) {
+                    randomArray[index] = Math.floor(Math.random() * 11)     //Random number from 0-10
+                }
+
+                return randomArray;
+            }
+
+            function selectionSort(array) {
+                for (var i = 0; i < array.length; i++) {
+                    for (var j = i + 1; j < array.length; j++) {
+                        var curentMinElement = array[i];
+
+                        if (array[j] <= curentMinElement) {
+                            var tempNumber = array[i];
+                            array[i] = array[j];
+                            array[j] = tempNumber;
+                        }
+                    }
+                }
+
+                return array;
+            }
+
+            function binarySearch(array, searchValue) {
+                var start = 0;
+                var end = array.length - 1;
+
+                var median = start + Math.floor(end / 2);
+
+                if (array[median] == searchValue) {
+                    jsConsole.writeLine('Index of searched element \'' + searchValue + '\' is: ' + median);
+                    return;
+                }
+                else if (array[median] > searchValue) {
+                    innerAlgorithm(array, start, median - 1, searchValue);
+                }
+                else if (array[median] < searchValue) {
+                    innerAlgorithm(array, median + 1, end, searchValue);
+                }
+
+                function innerAlgorithm(array, start, end, searchValue) {
+                    if (end < start) {
+                        jsConsole.writeLine('No element \'' + searchValue + '\' in the array!');
+                        return;
+                    }
+
+                    median = start + Math.floor((end - start) / 2);
+
+                    if (array[median] == searchValue) {
+                        jsConsole.writeLine('Index of searched element \'' + searchValue + '\' is: ' + median);
+                        return;
+                    }
+                    else if (array[median] > searchValue)
+                    {
+                        innerAlgorithm(array, start, median - 1, searchValue);
+                    }
+                    else if (array[median] < searchValue)
+                    {
+                        innerAlgorithm(array, median + 1, end, searchValue);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

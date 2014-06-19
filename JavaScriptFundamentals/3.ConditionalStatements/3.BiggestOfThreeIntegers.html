@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Write a script that finds the biggest of three integers using nested if statements.
+    </title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="firstInputNumber">First input number: </label>
+    <input type="text" id="firstInputNumber" />
+    <br />
+
+    <label for="secondInputNumber">Second input number: </label>
+    <input type="text" id="secondInputNumber" />
+    <br />
+
+    <label for="thirdInputNumber">Third input number: </label>
+    <input type="text" id="thirdInputNumber" />
+    <br />
+
+    <a href="#" onclick="determineTheBiggestOfThreeIntegers()">Execute script</a>
+    
+    <div id="js-console"></div>
+
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function determineTheBiggestOfThreeIntegers() {
+            var firstNumber = jsConsole.readInteger("#firstInputNumber");
+            var secondNumber = jsConsole.readInteger("#secondInputNumber");
+            var thirdNumber = jsConsole.readInteger("#thirdInputNumber");
+
+            if (isNaN(firstNumber) || isNaN(secondNumber) || isNaN(thirdNumber)) {
+                jsConsole.writeLine("Bad input!");
+            }
+            else {
+                if (firstNumber >= secondNumber) {
+                    if (firstNumber >= thirdNumber) {
+                        jsConsole.writeLine("The biggest integer value is: " + firstNumber);
+                    }
+                    else {
+                        jsConsole.writeLine("The biggest integer value is: " + thirdNumber);
+                    }
+                }
+                else {
+                    if (secondNumber >= thirdNumber) {
+                        jsConsole.writeLine("The biggest integer value is: " + secondNumber);
+                    }
+                    else {
+                        jsConsole.writeLine("The biggest integer value is: " + thirdNumber);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

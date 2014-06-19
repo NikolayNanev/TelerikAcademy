@@ -1,0 +1,48 @@
+﻿body{
+    background-color:#a4a3a3;
+}
+
+h1 {
+    font:bold 40px Thin;        
+}
+
+h2 {
+    font:bold 30px Thin;
+}
+
+h1, h2 {
+    color:#f6f3f3;
+}
+
+.mainHeader, .mainFooter, nav{
+    text-align: center;
+}
+
+nav ul{
+    list-style-type:none;
+    display:block;
+}
+
+nav ul li a {
+    text-decoration:none;
+    font:bold 25px Thin;
+    color:#f6f3f3;
+}
+
+.background {
+    background-color:#cac3c3;
+}
+
+.underline {
+    text-decoration:underline;
+}
+
+p a {
+    text-decoration:none;
+    color:#040404;
+}
+
+nav ul:after{
+    clear:both;
+    display:block;content:"";
+}

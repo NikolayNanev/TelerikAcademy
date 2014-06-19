@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>
+		Write a function that counts how many times given number appears in given array. 
+		Write a test function to check if the function is working correctly.
+	</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        a {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <label for="inputArrayLength">Input length of array: </label>
+    <input id="inputArrayLength" type="text"/>   
+    <br />
+
+	<label for="inputNumber">Number to count: </label>
+	<input id="inputNumber" type="text" />
+    <br />
+
+    <a href="#" id="countNumber">Count number in array</a>
+    <a href="#" id="testFunction">Test count function</a>
+	
+	<div id="js-console"></div>
+
+	<script src="scripts/js-console.js"></script>
+	<script>
+	    document.getElementById("countNumber").onclick = function execudeScript() {
+	        var lengthOfArray = jsConsole.readInteger('#inputArrayLength');
+	        var numberToCount = jsConsole.readInteger('#inputNumber');
+
+	        if (isNaN(lengthOfArray) || isNaN(numberToCount) || lengthOfArray < 1) {
+	            jsConsole.writeLine('Bad input');
+	        }
+	        else {
+	            var randomArray = generateRandomArray(lengthOfArray);
+	            printArray(randomArray);
+
+	            var countOfNumber = countNumberAppearance(numberToCount, randomArray);
+	            printAppearanceOfNumber(countOfNumber, numberToCount);
+	            jsConsole.writeLine();
+
+	            function generateRandomArray(lengthOfArr) {
+	                var randomArr = [];
+
+	                for (var index = 0; index < lengthOfArr; index++) {
+	                    randomArr[index] = Math.floor(Math.random() * 11)     //Random number from 0-10
+	                }
+
+	                return randomArr;
+	            }
+
+	            function countNumberAppearance(number, array) {
+	                var count = 0;
+	                for (var i in array) {
+	                    if (array[i] === number) {
+	                        count++;
+	                    }
+	                }
+
+	                return count;
+	            }
+
+	            function printArray(array) {
+	                var arrayAsString = array.join(', ');
+
+	                jsConsole.writeLine('The random generated array is: ');
+	                jsConsole.writeLine(arrayAsString);
+	            }
+
+	            function printAppearanceOfNumber(count, number) {
+	                var timeOrTimes = (count === 1) ? 'time' : 'times';
+	                jsConsole.writeLine('The number \'' + number + '\' appears ' + count + ' ' + timeOrTimes + '!');
+	            }
+	        }
+	    }	    
+	
+	    document.getElementById('testFunction').onclick = function test() {       
+	        var arrTest = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5];
+
+	        var test1 = countNumberAppearance(1, arrTest);
+	        var test2 = countNumberAppearance(2, arrTest);
+	        var test3 = countNumberAppearance(3, arrTest);
+	        var test4 = countNumberAppearance(4, arrTest);
+	        var test5 = countNumberAppearance(5, arrTest);
+
+	        if ((test1 === 1) && (test2 === 2) && (test3 === 3) && (test4 === 4) && (test5 === 5)){
+	            jsConsole.writeLine('All tests  have valid results!');
+	        }
+	        else {
+	            jsConsole.writeLine('Function is not working properly!');
+	        }
+
+	        function countNumberAppearance(number, array) {
+	            var count = 0;
+	            for (var i in array) {
+	                if (array[i] === number) {
+	                    count++;
+	                }
+	            }
+
+	            return count;
+	        }
+	    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        function Solve(inputArray) {
+            var args0 = splitNumbers(inputArray[0]);
+            var R = args0[0];
+            var C = args0[1];
+
+            var field = createFieldWithValues();
+            var directions = readDirections(inputArray);
+
+            var sumOfNumbers = 0;
+            //var countMoves = 0;
+
+            var Row = 0
+            var Col = 0
+            var curentDirection = directions[Row][Col];
+
+            
+
+            while (true) {
+                if (curentDirection === 'X') {
+                    //failed at (1, 1)
+                    return String("failed at (" + Row + ", " + Col + ")");
+                }
+
+                sumOfNumbers += field[Row][Col];
+                //countMoves++;
+                directions[Row][Col] = 'X';
+
+                if (curentDirection === 'dr') {
+                    Col++;
+                    Row++;
+                }
+                else if (curentDirection === 'dl') {
+                    Col--;
+                    Row++;
+                }
+                else if (curentDirection === 'ur') {
+                    Col++;
+                    Row--;
+                }
+                else if (curentDirection === 'ul') {
+                    Col--;
+                    Row--;
+                    
+                }
+
+                if (Row < 0 || Row >= R ||
+                   Col < 0 || Col >= C) {
+                    //successed with 20
+                    return String("successed with " + sumOfNumbers);
+                }
+
+
+                curentDirection = directions[Row][Col];
+            }
+
+            function readDirections(array) {
+                var directions = [];
+
+                for (var m = 1; m < R + 1; m++) {
+                    directions[m - 1] = splitDirection(array[m]);
+                }
+
+                return directions;
+            }
+
+            function createFieldWithValues() {
+                var field = [];
+                var value = 0;
+
+                for (var j = 0; j < R; j++) {
+                    field[j] = [];
+                    value = Math.pow(2, j);
+
+                    for (var k = 0; k < C; k++) {
+                        field[j][k] = value + k;
+                    }
+                }
+
+                return field;
+            }
+
+            function splitNumbers(element) {
+                var numbers = element.split(' ').map(Number);
+                return numbers;
+            }
+
+            function splitDirection(element) {
+                var directions = element.split(' ');
+                return directions;
+            }
+        }
+
+        args = args = [
+            '3 5',
+            'dr dl dr ur ul',
+            'dr dr ul ur ur',
+            'dl dr ur dl ur'
+        ]
+
+
+        var str = Solve(args);
+        console.log(str);
+    </script>
+</body>
+</html>

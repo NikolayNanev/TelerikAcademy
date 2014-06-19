@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Write a script that finds the lexicographically smallest and largest property in document, window and navigator objects</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <a href="#" id="document" onclick="executeScript()">Properties in document</a>
+    <a href="#" id="window" onclick="executeScript()">Properties in window</a>
+    <a href="#" id="navigator" onclick="executeScript()">Properties in navigator</a>
+    
+    <div id="js-console"></div>
+
+    <script src="scripts/js-console.js"></script>
+    <script>
+        window.onload = executeScript();
+
+        function executeScript() {
+            document.getElementById('document').onclick = function () {
+                jsConsole.writeLine("In document object:");
+                findSmallAndLargeLexicographProp(document);
+            }
+            document.getElementById('window').onclick = function () {
+                jsConsole.writeLine("In window object:");
+                findSmallAndLargeLexicographProp(window);
+            }
+            document.getElementById('navigator').onclick = function () {
+                jsConsole.writeLine("In navigator object:");
+                findSmallAndLargeLexicographProp(navigator);
+            }
+
+            function findSmallAndLargeLexicographProp(givenObject) {             
+                var strProperties = ''
+
+                for (var property in givenObject) {
+                    strProperties += property + ' ';
+                }
+
+                var arrayProperties = [];
+                //Split the string with properties
+                arrayProperties = strProperties.split(' ');
+
+                //Sort the array with properties
+                arrayProperties.sort(function (a, b) {
+                    return a.localeCompare(b);
+                });
+
+                var smallLexicographProperty = arrayProperties[1];
+                var largeLexicographProperty = arrayProperties[arrayProperties.length - 1];
+
+                jsConsole.writeLine("Smallest lexicographical property: " + smallLexicographProperty);
+                jsConsole.writeLine("Largest lexicographical property: " + largeLexicographProperty);
+                jsConsole.writeLine();
+            }
+        }
+    </script>
+</body>
+</html>

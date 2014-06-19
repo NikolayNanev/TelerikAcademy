@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title> 
+        Sorting an array means to arrange its elements in increasing order. Write a script to sort an array. 
+        Use the "selection sort" algorithm: Find the smallest element, move it at the first position, 
+        find the smallest from the rest, move it at the second position, etc.
+    </title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="inputArrayLength">Input length of array: </label>
+    <input id="inputArrayLength" />
+    <br />
+
+    <a href="#" onclick="executeScript()">Sort with "selection sort" algorithm</a>
+    
+    <div id="js-console"></div>
+
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function executeScript() {
+            var arrayLength = jsConsole.readInteger('#inputArrayLength');
+
+            if (isNaN(arrayLength) || arrayLength < 1) {
+                jsConsole.writeLine('Bad input');
+            }
+            else {
+                var arrayWithNumbers = generateRandomArray(arrayLength);
+                
+                jsConsole.writeLine('The sequence of numbers is:');
+                var stringArray = arrayWithNumbers.join(' ');
+                jsConsole.writeLine(stringArray);
+
+                var sortedArray = selectionSort(arrayWithNumbers);
+
+                jsConsole.writeLine('The sorted sequence of numbers is:');
+                stringArray = sortedArray.join(' ');
+                jsConsole.writeLine(stringArray);
+
+                jsConsole.writeLine();
+            }
+
+            function generateRandomArray(lengthOfArray) {
+                var randomArray = [];
+
+                for (var index = 0; index < lengthOfArray; index++) {
+                    randomArray[index] = Math.floor(Math.random() * 11)     //Random number from 0-10
+                }
+
+                return randomArray;
+            }
+
+            function selectionSort(array) {
+                for (var i = 0; i < array.length; i++) {
+                    for (var j = i + 1; j < array.length; j++) {
+                        var curentMinElement = array[i];
+
+                        if (array[j] <= curentMinElement) {
+                            var tempNumber = array[i];
+                            array[i] = array[j];
+                            array[j] = tempNumber;
+                        }
+                    }
+                }
+
+                return array;
+            }
+        }
+    </script>
+</body>
+</html>

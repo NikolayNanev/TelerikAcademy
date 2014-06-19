@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Literals, Typeof, Null and Undefine</title>
+    <link href="styles/js-console.css" rel="stylesheet" />   
+</head>
+<body>
+    <div id="js-console"></div>
+
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+        //String, integer, float and boolean literals
+        var stringValue = "I'm a string";   //'I\'m a string';
+        var integerValue = 1234;
+        var floatValue = 3.14;
+        var booleanValue = true;
+
+        //array and object literals
+        var arrayValue = ['home', , 'school', , ];    //In the following example, the length of the array is four, and arrayValue[1] and arrayValue[3] are missing. Only the last comma is ignored.
+        var objectValue = { name: "Saturn", type: "planet" };
+
+        //null and undefined variables
+        var nullValue = null;
+        var undefinedNoInitialValue;
+        var undefinedWithInitialValue = undefined;
+
+        //Printing variables
+        jsConsole.writeLine("Type of stringValue is " + typeof stringValue);
+        jsConsole.writeLine("Type of integerValue is " + typeof integerValue);
+        jsConsole.writeLine("Type of floatValue is " + typeof floatValue);
+        jsConsole.writeLine("Type of booleanValue is " + typeof booleanValue);
+        jsConsole.writeLine();
+
+        jsConsole.writeLine("Type of arrayValue is " + typeof arrayValue);
+        jsConsole.writeLine("Type of objectValue is " + typeof objectValue);
+        jsConsole.writeLine();
+
+        jsConsole.writeLine("Type of nullValue is " + typeof nullValue);
+        jsConsole.writeLine("Type of undefinedNoInitialValue is " + typeof undefinedNoInitialValue);
+        jsConsole.writeLine("Type of undefinedWithInitialValue is " + typeof undefinedWithInitialValue);
+    </script>
+</body>
+</html>

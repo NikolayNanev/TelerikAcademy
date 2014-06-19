@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Write an expression that checks if given point (x,  y) is within a circle K(0,0 Radius=5).
+    </title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="xOfPoint">Value of X: </label>
+    <input type="text" id="xOfPoint" />
+    <br />
+
+    <label for="yOfPoint">Value of Y: </label>
+    <input type="text" id="yOfPoint" />
+    <br />
+
+    <a href="#" onclick="determineIfPointIsWithinCircle()">Is the point within a circle K(0,0 Radius=5)</a>
+    
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+
+    <script>
+        xValueofCenter = 0;
+        yValueofCenter = 0;
+        radiusOfCircle = 5;
+        
+        function determineIfPointIsWithinCircle() {
+
+            var xValueofPoint = jsConsole.readFloat("#xOfPoint");
+            var yValueofPoint = jsConsole.readFloat("#yOfPoint");
+
+            if (isNaN(xValueofPoint) || isNaN(yValueofPoint)) {
+                jsConsole.writeLine("Bad input!");
+            }
+            else {
+                printCircleInfo();
+            }
+
+            function printCircleInfo() {
+
+				var squareDeltaX = Math.pow(xValueofPoint - xValueofCenter, 2);
+				var squareDeltaY = Math.pow(yValueofPoint - yValueofCenter, 2);
+                var isPointWithinCircle = Math.sqrt(squareDeltaX + squareDeltaY) <= radiusOfCircle;
+
+                if (isPointWithinCircle) {
+                    jsConsole.writeLine("The point P(" + xValueofPoint + "," + yValueofPoint + 
+						") is within the circle K(" + xValueofCenter + "," + yValueofCenter + 
+						" radius=" + radiusOfCircle + ")");
+                }
+                else {
+                    jsConsole.writeLine("The point P(" + xValueofPoint + "," + yValueofPoint + 
+						") is NOT within the circle K(" + xValueofCenter + "," + yValueofCenter + 
+						" radius=" + radiusOfCircle + ")");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

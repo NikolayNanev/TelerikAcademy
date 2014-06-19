@@ -1,0 +1,51 @@
+nav ul { 
+    list-style-type:none;
+    display:block;
+}
+
+nav ul li {
+    float: left;
+    margin: 5px;
+    padding:5px;
+}
+        
+nav ul:after {
+    clear:both;
+    display:block;
+    content:"";
+}
+
+#main {
+    width: 480px;
+    text-align: center;
+    float: left;
+}
+    #main fieldset {
+        width:200px;
+        display: inline-block;
+    }
+
+    #main fieldset div {
+        
+    }
+
+    #main fieldset img {
+        float: left;
+    }
+
+    #main fieldset span {
+        display: block;
+		padding: 2px;
+    }
+form div {
+    margin: 10px;
+}
+
+form div span {
+    text-align: left;
+    margin: 10px;
+}
+
+form div input {
+    display: block;
+}

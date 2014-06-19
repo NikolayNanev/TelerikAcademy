@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        function Solve(inputString) {
+            var args0 = splitNumbers(inputString[0]);
+            var N = args0[0];
+            var M = args0[1];
+            var J = args0[2];
+
+            var args1 = splitNumbers(inputString[1]);
+            var R = args1[0];
+            var C = args1[1];
+
+            var jumps = readJumps();
+            var field = createField();
+
+            var answer = findIfJoroEscapes();
+
+            return answer;
+
+            function findIfJoroEscapes() {
+                var curentRow = R;
+                var curentCol = C;
+
+                var sumOfNumbers = 0;
+                var countOfJumps = 0;
+                var jumpIndex = 0;
+
+                while (true) {
+                    if (curentRow < 0 || curentRow >= N ||
+                        curentCol < 0 || curentCol >= M) {
+                        return String('escaped ' + sumOfNumbers);
+                    }
+
+                    if (field[curentRow][curentCol] === 'X') {
+                        return String('caught ' + countOfJumps);
+                    }
+
+                    sumOfNumbers += field[curentRow][curentCol];
+                    field[curentRow][curentCol] = 'X';
+
+                    curentRow += jumps[jumpIndex].row;
+                    curentCol += jumps[jumpIndex].col;
+                    countOfJumps++;
+
+                    jumpIndex++;
+                    if (jumpIndex === jumps.length) {
+                        jumpIndex = 0;
+                    }
+                }
+            }
+
+            function createField() {
+                field = [];
+                value = 1;
+
+                for (var j = 0; j < N; j++) {
+                    field[j] = [];
+
+                    for (var k = 0; k < M; k++) {
+                        field[j][k] = value++;
+                    }
+                }
+
+                return field;
+            }
+
+            function readJumps() {
+                jumps = [];
+
+                for (var i = 2; i < 2 + J; i++) {
+                    var parsejump = splitNumbers(inputString[i]);
+
+                    var jump = {
+                        row: parsejump[0],
+                        col: parsejump[1]
+                    };
+
+                    jumps.push(jump);
+                }
+
+                return jumps;
+            }
+
+            function splitNumbers(element) {
+                var numbers = element.split(' ').map(Number);
+                return numbers;
+            }
+        }
+
+        var input = [
+            '6 7 3',
+            '0 0',
+            '2 2',
+            '-2 2',
+            '3 -1'
+        ];
+
+        console.log(Solve(input));
+    </script>
+</body>
+</html>

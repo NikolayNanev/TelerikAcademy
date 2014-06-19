@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Write a JavaScript function to check if in a given expression the brackets are put correctly.
+            - Example of correct expression: ((a+b)/5-d).
+            - Example of incorrect expression: )(a+b)).
+    </title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function areBracketsCorrect(expression) {
+            lengthOfExpression = expression.length;
+            var countBrackets = 0;
+            var currentChar = '';
+
+            for (var i = 0; i < lengthOfExpression; i++) {
+                currentChar = expression.charAt(i);
+
+                if (currentChar === '(') {
+                    countBrackets++;
+                }
+                else if (currentChar === ')') {
+                    countBrackets--;
+                }
+
+                if (countBrackets < 0) {
+                    return false;
+                }
+            }
+
+            return countBrackets === 0 ? true : false;
+        }
+
+        var expression1 = '((a+b)/5-d)';
+        var expression2 = ')(a+b))';
+        var expression3 = ')a + b(';
+        var expression4 = '(((a+b)/5-d)';
+        var expression5 = '(7+9)+ 12^2+((7*3)+9+(((42-9)- 7)*10)/12)';
+
+        jsConsole.writeLine(expression1 + ': '+ areBracketsCorrect(expression1));
+        jsConsole.writeLine(expression2 + ': '+ areBracketsCorrect(expression2));
+        jsConsole.writeLine(expression3 + ': '+ areBracketsCorrect(expression3));
+        jsConsole.writeLine(expression4 + ': '+ areBracketsCorrect(expression4));
+        jsConsole.writeLine(expression5 + ': '+ areBracketsCorrect(expression5));
+
+    </script>
+</body>
+</html>

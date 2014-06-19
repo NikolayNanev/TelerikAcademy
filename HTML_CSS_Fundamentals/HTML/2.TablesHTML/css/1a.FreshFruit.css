@@ -1,0 +1,21 @@
+table {
+    width:360px;
+
+}
+
+td {
+    height:100px;
+}
+
+#text {
+    width:66%;
+}
+
+#img {
+    width:33%;
+}
+
+img {
+    width: 140px;
+    height: 90px;
+}

@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Write a function that groups an array of persons by age, first or last name. 
+        The function must return an associative array, with keys - the groups, and values -arrays with persons in this groups
+        Use function overloading (i.e. just one function)
+    </title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function group(array, key) {
+            if (array.length === 0) {
+                return undefined;
+            }
+
+            var answer = {};
+            for (var prop in array[0]) {
+                if (prop === key) {
+                    for (var i = 0; i < array.length; i++) {
+                        if (!answer[array[i][key]]) {
+                            answer[array[i][key]] = [];
+                        }
+                        answer[array[i][key]].push(array[i]);
+                    }
+                }
+            }
+            return answer;
+        }
+
+        function Person(firstname, lastname, age) {
+            function toString() {
+                return String(firstname + ' ' + lastname + ' ' + age);
+            }
+
+            return {
+                firstname: firstname,
+                lastname: lastname,
+                age: age,
+                toString: toString
+            }
+        }
+
+        var persons = [
+           Person('Gosho', 'Petrov', 32),
+           Person('Bay', 'Ivan', 81),
+           Person('Gosho', 'Marinov', 15),
+           Person('Marin', 'Petrov', 7),
+           Person('Maq', 'Peneva', 15)
+        ];
+
+        var groupedByAge = group(persons, 'age');
+        var groupedByFirstName = group(persons, 'firstname');
+        var groupedByLastName = group(persons, 'lastname');
+
+        console.log(groupedByAge);
+        console.log(groupedByFirstName);
+        console.log(groupedByLastName);
+
+    </script>
+</body>
+</html>

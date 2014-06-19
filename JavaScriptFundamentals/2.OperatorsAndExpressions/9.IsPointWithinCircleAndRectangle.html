@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Write an expression that checks for given point (x, y) if it is within the circle K( (1,1), 3) 
+        and out of the rectangle R(top=1, left=-1, width=6, height=2).
+    </title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="xOfPoint">Value of X: </label>
+    <input type="text" id="xOfPoint" />
+    <br />
+
+    <label for="yOfPoint">Value of Y: </label>
+    <input type="text" id="yOfPoint" />
+    <br />
+
+    <a href="#" onclick="determineIfPointIsWithinCircleAndOutOfRectangle()">Is the point within a circle K(1,1 Radius=3) and out of rectangle R(top=1, left=-1, width=6, height=2)</a>
+    
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+
+    <script>
+        //Circle info K((1,1), 3)
+        xValueofCenter = 1;
+        yValueofCenter = 1;
+        radiusOfCircle = 3;
+
+        //Rectangle info R(top=1, left=-1, width=6, height=2)
+        topBorder = 1;
+        leftBorder = -1;
+        widthOfRectangle = 6;
+        heightOfRectangle = 2;
+        bottomBorder = topBorder - heightOfRectangle;
+        rightBorder = leftBorder + widthOfRectangle;
+
+        function determineIfPointIsWithinCircleAndOutOfRectangle() {
+
+            var xValueofPoint = jsConsole.readFloat("#xOfPoint");
+            var yValueofPoint = jsConsole.readFloat("#yOfPoint");
+
+            if (isNaN(xValueofPoint) || isNaN(yValueofPoint)) {
+                jsConsole.writeLine("Bad input!");
+            }
+            else {
+                printCircleInfo();
+                printRectangleInfo();
+            }
+
+            function printCircleInfo() {
+				
+				var squareDeltaX = Math.pow(xValueofPoint - xValueofCenter, 2);
+				var squareDeltaY = Math.pow(yValueofPoint - yValueofCenter, 2);
+                var isPointWithinCircle = Math.sqrt(squareDeltaX + squareDeltaY) <= radiusOfCircle;
+				
+                if (isPointWithinCircle) {
+                    jsConsole.writeLine("The point P(" + xValueofPoint + "," + yValueofPoint + 
+						") is within the circle K(" + xValueofCenter + "," + yValueofCenter + 
+						" radius=" + radiusOfCircle + ")");
+                }
+                else {
+                    jsConsole.writeLine("The point P(" + xValueofPoint + "," + yValueofPoint + 
+						") is NOT within the circle K(" + xValueofCenter + "," + yValueofCenter +
+                        " radius=" + radiusOfCircle + ")");
+                }
+            }
+            function printRectangleInfo() {
+                var isPointOutOfRectangle = (xValueofPoint > rightBorder || xValueofPoint < leftBorder) ||
+                    (yValueofPoint < bottomBorder || yValueofPoint > topBorder);
+
+                if (isPointOutOfRectangle) {
+                    jsConsole.writeLine("The point P(" + xValueofPoint + "," + yValueofPoint + 
+						") is NOT within the rectangle R(top=" + topBorder + ", left=" + 
+						leftBorder + ", width=" + widthOfRectangle + ", height=" + heightOfRectangle + ")");                 
+                }
+                else {
+                    jsConsole.writeLine("The point P(" + xValueofPoint + "," + yValueofPoint + 
+						") is within the rectangle R(top=" + topBorder + ", left=" + 
+						leftBorder + ", width=" + widthOfRectangle + ", height=" + heightOfRectangle + ")");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

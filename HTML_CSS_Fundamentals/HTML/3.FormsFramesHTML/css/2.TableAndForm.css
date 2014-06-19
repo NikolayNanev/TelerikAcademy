@@ -1,0 +1,23 @@
+table {
+	border-collapse:collapse;
+	width:auto;
+}
+
+td {
+	padding:3px;
+	border:1px solid #000; 
+	width:auto
+}
+
+thead {
+	font-weight:bold;
+	text-align:center;
+}
+
+tbody {
+	text-align:left;
+}
+	
+td.total { 
+	font-weight: bold;
+}

@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Write a function that returns the last digit of given integer as an English word. 
+        Examples: 512 -> "two", 1024 -> "four", 12309 -> "nine"
+    </title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="inputNumber">Input number: </label>
+    <input id="inputNumber" type="text" />
+    <br />
+
+    <a href="#" onclick="printNameOfLastDigit()">Execute script</a>
+    <div id="js-console"></div>
+
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function printNameOfLastDigit() {
+            var numberToCheck = jsConsole.readFloat("#inputNumber");
+            
+            if (isNaN(numberToCheck)) {
+                jsConsole.writeLine("Bad input!");
+            }
+            else {
+                var numberAsString = numberToCheck.toString();
+                var lengthOfNumberString = numberAsString.length;
+                var lastDigitOfNumber = parseInt(numberAsString.charAt(lengthOfNumberString - 1));
+            
+                jsConsole.write("The last digit of '" + numberAsString + "' is '" + lastDigitOfNumber + "' and it's name is: ");
+                printNameOfDigit(lastDigitOfNumber);
+            }
+
+            function printNameOfDigit(inputDigit) {
+                switch (inputDigit) {
+                    case 0: jsConsole.writeLine("Zero"); break;
+                    case 1: jsConsole.writeLine("One"); break;
+                    case 2: jsConsole.writeLine("Two"); break;
+                    case 3: jsConsole.writeLine("Three"); break;
+                    case 4: jsConsole.writeLine("Four"); break;
+                    case 5: jsConsole.writeLine("Five"); break;
+                    case 6: jsConsole.writeLine("Six"); break;
+                    case 7: jsConsole.writeLine("Seven"); break;
+                    case 8: jsConsole.writeLine("Eight"); break;
+                    case 9: jsConsole.writeLine("Nine"); break;
+                    default: jsConsole.writeLine("Bad input!"); break;
+                }
+            }
+        }     
+    </script>
+</body>
+</html>

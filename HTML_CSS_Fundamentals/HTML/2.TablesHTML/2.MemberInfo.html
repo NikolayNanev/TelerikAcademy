@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Example 2:Forms</title>
+    <link type="text/css" rel="stylesheet" href="css/2.MemberInfo.css"/>
+</head>
+<body>
+    <form name="memberInfo" method="get">
+        <div>
+	        <label for="memberName">Member name:</label>
+		    <input id="memberName" type="text" required="required" />
+            <span>*req</span>
+		</div>
+
+        <div>
+		    <label for="memberEmail">Email:</label>
+		    <input title="memberEmail" id="memberEmail" type="email" required="required" 
+                pattern="[a-zA-Z0-9_]{3,}@[a-zA-Z0-9_]{3,}.[a-zA-Z0-9_]{2,4}" placeholder="sample@email.com"/>
+            <span>*req</span>
+		</div>
+
+        <div>
+		    <label for="school">School:</label>
+		    <input id="school" type="text" required="required" />
+            <span>*req</span>
+		</div>
+
+        <button type="submit">
+            <img src="img/submit_button.jpg"/>
+        </button>
+    </form>
+</body>
+</html>

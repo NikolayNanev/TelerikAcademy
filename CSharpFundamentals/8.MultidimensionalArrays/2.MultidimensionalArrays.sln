@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1a.PrintingMatrixA", "1a.PrintingMatrixA\1a.PrintingMatrixA.csproj", "{DC90E2B2-D2D8-4C8A-921B-A43A6333BD1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1b.PrintingMatrixB", "1b.PrintingMatrixB\1b.PrintingMatrixB.csproj", "{BFDF31E7-4304-4945-A50B-DAC739EED31A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1c.PrintingMatrixC", "1c.PrintingMatrixC\1c.PrintingMatrixC.csproj", "{86D75288-79EC-49DE-A792-1754A18A0653}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.Square3x3WithMaximalSum", "2.Square3x3WithMaximalSum\2.Square3x3WithMaximalSum.csproj", "{CC01828F-8576-4A77-A24B-13500DC9BD92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.LargestNumberInArrayBiggerThenK_BinSearch", "4.LargestNumberInArrayBiggerThenK_BinSearch\4.LargestNumberInArrayBiggerThenK_BinSearch.csproj", "{C57A07F9-5F0C-4426-BD62-A8B75EDF5785}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.SortingStringArrayByLengthOfElements", "5.SortingStringArrayByLengthOfElements\5.SortingStringArrayByLengthOfElements.csproj", "{FDB7C6C4-2602-4916-B19C-A294217C2F16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.FindsLongestSequenceOfEqualStringsInMatrix", "3.FindsLongestSequenceOfEqualStringsInMatrix\3.FindsLongestSequenceOfEqualStringsInMatrix.csproj", "{F7DB0BD8-1ED1-4395-A92E-C56A93B5267C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC90E2B2-D2D8-4C8A-921B-A43A6333BD1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC90E2B2-D2D8-4C8A-921B-A43A6333BD1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC90E2B2-D2D8-4C8A-921B-A43A6333BD1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC90E2B2-D2D8-4C8A-921B-A43A6333BD1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFDF31E7-4304-4945-A50B-DAC739EED31A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFDF31E7-4304-4945-A50B-DAC739EED31A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFDF31E7-4304-4945-A50B-DAC739EED31A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFDF31E7-4304-4945-A50B-DAC739EED31A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86D75288-79EC-49DE-A792-1754A18A0653}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86D75288-79EC-49DE-A792-1754A18A0653}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86D75288-79EC-49DE-A792-1754A18A0653}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86D75288-79EC-49DE-A792-1754A18A0653}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC01828F-8576-4A77-A24B-13500DC9BD92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC01828F-8576-4A77-A24B-13500DC9BD92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC01828F-8576-4A77-A24B-13500DC9BD92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC01828F-8576-4A77-A24B-13500DC9BD92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C57A07F9-5F0C-4426-BD62-A8B75EDF5785}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C57A07F9-5F0C-4426-BD62-A8B75EDF5785}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C57A07F9-5F0C-4426-BD62-A8B75EDF5785}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C57A07F9-5F0C-4426-BD62-A8B75EDF5785}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDB7C6C4-2602-4916-B19C-A294217C2F16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDB7C6C4-2602-4916-B19C-A294217C2F16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDB7C6C4-2602-4916-B19C-A294217C2F16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDB7C6C4-2602-4916-B19C-A294217C2F16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7DB0BD8-1ED1-4395-A92E-C56A93B5267C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7DB0BD8-1ED1-4395-A92E-C56A93B5267C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7DB0BD8-1ED1-4395-A92E-C56A93B5267C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7DB0BD8-1ED1-4395-A92E-C56A93B5267C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,61 @@
+html, body, div, h3, ul, li, a, p, img, span, aside {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+  font-size: 16px; }
+
+#wrapper {
+  width: 960px;
+  padding: 5px; }
+  #wrapper .menu {
+    list-style: none;
+    text-align: center; }
+    #wrapper .menu li {
+      float: left;
+      display: inline-block;
+      width: 180px;
+      height: 180px;
+      margin: 5px;
+      border: 20px solid #808080;
+      background: white;
+      background: -moz-linear-gradient(top, #737373 0%, white 100%);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #737373), color-stop(100%, white));
+      background: -webkit-linear-gradient(top, #737373 0%, white 100%);
+      background: -o-linear-gradient(top, #737373 0%, white 100%);
+      background: -ms-linear-gradient(top, #737373 0%, white 100%);
+      background: linear-gradient(to bottom, #737373 0%, white 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='${from-color}', endColorstr='${to-color}',GradientType=0 ); }
+      #wrapper .menu li h3 {
+        margin: 10px;
+        color: #FFFFFF; }
+      #wrapper .menu li p {
+        margin: 10px; }
+      #wrapper .menu li .image-container {
+        margin: 5px; }
+        #wrapper .menu li .image-container img {
+          border-radius: 20px;
+          width: 120px;
+          height: 100px; }
+      #wrapper .menu li .click-here {
+        display: none; }
+      #wrapper .menu li:hover {
+        background: #808080;
+        border-color: #454545; }
+        #wrapper .menu li:hover h3 {
+          margin: 5px;
+          text-decoration: underline; }
+        #wrapper .menu li:hover p {
+          margin: 5px;
+          text-transform: uppercase; }
+        #wrapper .menu li:hover .image-container {
+          margin: 0px; }
+          #wrapper .menu li:hover .image-container img {
+            border-radius: 20px;
+            width: 140px;
+            height: 110px; }
+        #wrapper .menu li:hover .subtitle {
+          display: none; }
+        #wrapper .menu li:hover .click-here {
+          display: block;
+          color: #fff; }
+

@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Write a script that finds the max and min number from a sequence of numbers</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <a href="#" onclick="executeScript()">Find min and max numbers</a>
+    
+    <div id="js-console"></div>
+
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function executeScript() {
+            var sequenceOfNumbers = [4, -54, 7, 7847, 1, 1212, -4555];
+
+            if (areElementsValidNumbers(sequenceOfNumbers)) {
+
+                var minNumber = findMinNumber(sequenceOfNumbers);
+                var maxNumber = findMaxNumber(sequenceOfNumbers);
+                
+                jsConsole.writeLine("Min number is: " + minNumber + " Max number is: " + maxNumber);
+                
+            }
+            else {
+                jsConsole.writeLine("Bad input!");
+            }
+
+            function areElementsValidNumbers(array) {
+                var elementsAreValidNumbers = true;
+
+                for (var index = 0; index < array.length; index++) {
+                    if (isNaN(array[index]) || array[index] == undefined || array[index] === null) {
+                        elementsAreValidNumbers = false;
+                        return elementsAreValidNumbers;
+                    }
+                }
+
+                return elementsAreValidNumbers
+            }
+
+            function findMinNumber(array) {
+                minNumber = array[0];
+
+                for (var index in array) {
+                    if (array[index] < minNumber) {
+                        minNumber = array[index];
+                    }
+                }
+
+                return minNumber;
+            }
+
+            function findMaxNumber(array) {
+                maxNumber = array[0];
+
+                for (var index in array) {
+                    if (array[index] > maxNumber) {
+                        maxNumber = array[index];
+                    }
+                }
+
+                return maxNumber;
+            }
+        }
+    </script>
+</body>
+</html>

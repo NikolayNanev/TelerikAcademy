@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>
+		Write a function that checks if the element at given position in 
+        given array of integers is bigger than its two neighbors (when such exist).
+	</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        a {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <label for="inputArrayLength">Input length of array: </label>
+    <input id="inputArrayLength" type="text"/>   
+    <br />
+
+	<label for="inputIndex">Input index: </label>
+	<input id="inputIndex" type="text" />
+    <br />
+
+    <a href="#" id="CompareElement">Compare element with neighbors</a>
+	
+	<div id="js-console"></div>
+
+	<script src="scripts/js-console.js"></script>
+	<script>
+	    document.getElementById("CompareElement").onclick = function compareElement() {
+	        var lengthOfArray = jsConsole.readInteger('#inputArrayLength');
+	        var elementIndex = jsConsole.readInteger('#inputIndex');
+
+	        if (isNaN(lengthOfArray) || isNaN(elementIndex) || (lengthOfArray < 1) ||
+                (elementIndex < 0 || elementIndex >= lengthOfArray)) {
+	            jsConsole.writeLine('Bad input');
+	        }
+	        else {
+	            var randomArray = generateRandomArray(lengthOfArray);
+	            printArray(randomArray);
+
+	            var isElementBiggerThenNeighbors = compareElementWithNeighbors(elementIndex, randomArray);
+	            printResult(isElementBiggerThenNeighbors);
+
+	            function compareElementWithNeighbors(index, array) {
+	                var length = array.length;
+
+	                if (index === 0 || index === length - 1) {
+	                    return false;
+	                }
+	                else {
+	                    var element = array[index];
+	                    var firstNeighbor = array[index - 1];
+	                    var secondNeighbor = array[index + 1];
+
+	                    if (element > firstNeighbor && element > secondNeighbor) {
+	                        return true;
+	                    }
+	                    else {
+	                        return false;
+	                    }
+	                }
+	            }
+
+	            function generateRandomArray(lengthOfArr) {
+	                var randomArr = [];
+
+	                for (var index = 0; index < lengthOfArr; index++) {
+	                    randomArr[index] = Math.floor(Math.random() * 11)     //Random number from 0-10
+	                }
+
+	                return randomArr;
+	            }
+
+	            function printArray(array) {
+	                var arrayAsString = array.join(', ');
+
+	                jsConsole.writeLine('The random generated array is: ');
+	                jsConsole.writeLine(arrayAsString);
+	            }
+
+	            function printResult(isElementBigger) {
+	                if (isElementBigger) {
+	                    jsConsole.writeLine('Element on position ' + elementIndex + ' is bigger than its two neighbors!')
+	                }
+	                else {
+	                    jsConsole.writeLine('Element on position ' + elementIndex + ' is NOT bigger than its two neighbors!')
+	                }
+
+	                jsConsole.writeLine()
+	            }
+	        }
+	    }
+    </script>
+</body>
+</html>

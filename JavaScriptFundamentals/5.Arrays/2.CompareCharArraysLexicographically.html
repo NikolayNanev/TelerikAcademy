@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title> Write a script that compares two char arrays lexicographically (letter by letter).
+
+    </title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="inputFirstArray">Elements of first char array (as string)</label>
+    <input id="inputFirstArray" />
+    <br />
+
+    <label for="inputSecondArray">Elements of second char array (as string)</label>
+    <input id="inputSecondArray" />
+    <br />
+
+    <a href="#" onclick="executeScript()">Compares char arrays lexicographically</a>
+    
+    <div id="js-console"></div>
+
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function executeScript() {
+         
+            var firstCharArray = stringToCharArray(jsConsole.read('#inputFirstArray'));
+            var secondCharArray = stringToCharArray(jsConsole.read('#inputSecondArray'));
+
+            compareCharArraysLexicographically(firstCharArray, secondCharArray);
+
+            function stringToCharArray(inputString) {
+                var charArray = [];
+                
+                for (var index = 0; index < inputString.length ; index++) {
+                    charArray[index] = inputString.charAt(index);
+                }
+
+                return charArray;
+            }
+
+            function compareCharArraysLexicographically(firstArr, secondArr) {
+                firstStr = firstArr.join('');
+                secondStr = secondArr.join('');
+
+                if (firstStr > secondStr) {
+                    jsConsole.writeLine("The second array is lexicographically first!");
+                }
+                else if (firstStr < secondStr) {
+                    jsConsole.writeLine("The first array is lexicographically first!");
+                }
+                else {
+                    jsConsole.writeLine("The two arrays are equal!");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

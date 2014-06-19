@@ -1,0 +1,43 @@
+table {
+    border-collapse:collapse; 
+}
+        
+td {
+    padding:1px;
+    border:1px solid #000; 
+    width:auto
+}
+        
+td.leftColumn {
+    text-align:right;
+}
+
+td.rightColumn {
+    text-align:left;
+}
+        
+tr.footer {
+    background-color:#00DBFF; 
+    text-align:center;
+}
+
+#lastName, #firstName, #email {
+    width:340px;
+}
+
+#address, #comment {
+    width:340px;
+    height:60px;
+}
+
+#state, #zipCode,#phoneFirst, #phoneMiddle, #phoneLast, #country {
+    width:80px;
+}
+
+#day, #month, #year {
+    width:30px;
+}
+
+#city {
+    width:200px;
+}

@@ -1,0 +1,25 @@
+table {
+    border-collapse:collapse; 
+    width:auto;
+}
+
+nav ul { 
+    list-style-type:none;
+    display:block;
+}
+
+nav ul li {
+    float: left;
+    margin: 5px;
+    padding:5px;
+}
+        
+nav ul:after {
+    clear:both;
+    display:block;
+    content:"";
+}
+
+#main {
+    width:48%;
+}

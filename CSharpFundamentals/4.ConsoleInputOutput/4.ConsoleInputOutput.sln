@@ -1,0 +1,74 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.ReadThreeIntegerFromConsolePrintSum", "01.ReadThreeIntegerFromConsolePrintSum\01.ReadThreeIntegerFromConsolePrintSum.csproj", "{508144E6-2FF2-4234-B117-18C6425E6F88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.ReadRadiusOfCirclePrintsPerimeterAndArea", "02.ReadRadiusOfCirclePrintsPerimeterAndArea\02.ReadRadiusOfCirclePrintsPerimeterAndArea.csproj", "{A6DDCDD5-488D-4982-B9A3-4BCC6D000404}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.InfoOnCompanyAndManager", "03.InfoOnCompanyAndManager\03.InfoOnCompanyAndManager.csproj", "{0A232052-35D4-48C9-9C61-2C2563D215F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.ReadTwoIntegersPrintsNumbersPBetweenThem", "04.ReadTwoIntegersPrintsNumbersPBetweenThem\04.ReadTwoIntegersPrintsNumbersPBetweenThem.csproj", "{EAD575F9-893D-4794-A40C-F87DD146327B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.PrintsTheGreaterOfTwoNumbersNoIfStatement", "05.PrintsTheGreaterOfTwoNumbersNoIfStatement\05.PrintsTheGreaterOfTwoNumbersNoIfStatement.csproj", "{A52CA525-2AA6-4C13-87EE-CF669B72FF3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06.SolvingQuadraticEquation", "06.SolvingQuadraticEquation\06.SolvingQuadraticEquation.csproj", "{78370ADC-14D8-4069-BED2-D5F7A820ACE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07.GetNumbersAndCalculateTheirSum", "07.GetNumbersAndCalculateTheirSum.\07.GetNumbersAndCalculateTheirSum.csproj", "{D55C61E9-0D88-48E6-A93E-D3777507E80B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08.PrintingIntegersFromOneToN", "08.PrintingIntegersFromOneToN\08.PrintingIntegersFromOneToN.csproj", "{356DD639-0763-44CD-99BF-A845D90ADA75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09.First100MembersOfFibonacciSequence", "09.First100MembersOfFibonacciSequence\09.First100MembersOfFibonacciSequence.csproj", "{209DD709-570D-4B48-8869-C223DE0F9CD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.CalculatingTheSumOfaSequence", "10.CalculatingTheSumOfaSequence\10.CalculatingTheSumOfaSequence.csproj", "{84F7E6F1-68F1-4CBD-93EF-0CCC2CFF2073}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{508144E6-2FF2-4234-B117-18C6425E6F88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{508144E6-2FF2-4234-B117-18C6425E6F88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{508144E6-2FF2-4234-B117-18C6425E6F88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{508144E6-2FF2-4234-B117-18C6425E6F88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6DDCDD5-488D-4982-B9A3-4BCC6D000404}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6DDCDD5-488D-4982-B9A3-4BCC6D000404}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6DDCDD5-488D-4982-B9A3-4BCC6D000404}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6DDCDD5-488D-4982-B9A3-4BCC6D000404}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A232052-35D4-48C9-9C61-2C2563D215F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A232052-35D4-48C9-9C61-2C2563D215F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A232052-35D4-48C9-9C61-2C2563D215F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A232052-35D4-48C9-9C61-2C2563D215F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAD575F9-893D-4794-A40C-F87DD146327B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAD575F9-893D-4794-A40C-F87DD146327B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAD575F9-893D-4794-A40C-F87DD146327B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAD575F9-893D-4794-A40C-F87DD146327B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A52CA525-2AA6-4C13-87EE-CF669B72FF3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A52CA525-2AA6-4C13-87EE-CF669B72FF3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A52CA525-2AA6-4C13-87EE-CF669B72FF3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A52CA525-2AA6-4C13-87EE-CF669B72FF3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78370ADC-14D8-4069-BED2-D5F7A820ACE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78370ADC-14D8-4069-BED2-D5F7A820ACE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78370ADC-14D8-4069-BED2-D5F7A820ACE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78370ADC-14D8-4069-BED2-D5F7A820ACE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D55C61E9-0D88-48E6-A93E-D3777507E80B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D55C61E9-0D88-48E6-A93E-D3777507E80B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D55C61E9-0D88-48E6-A93E-D3777507E80B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D55C61E9-0D88-48E6-A93E-D3777507E80B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{356DD639-0763-44CD-99BF-A845D90ADA75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{356DD639-0763-44CD-99BF-A845D90ADA75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{356DD639-0763-44CD-99BF-A845D90ADA75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{356DD639-0763-44CD-99BF-A845D90ADA75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{209DD709-570D-4B48-8869-C223DE0F9CD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{209DD709-570D-4B48-8869-C223DE0F9CD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{209DD709-570D-4B48-8869-C223DE0F9CD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{209DD709-570D-4B48-8869-C223DE0F9CD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84F7E6F1-68F1-4CBD-93EF-0CCC2CFF2073}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84F7E6F1-68F1-4CBD-93EF-0CCC2CFF2073}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84F7E6F1-68F1-4CBD-93EF-0CCC2CFF2073}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84F7E6F1-68F1-4CBD-93EF-0CCC2CFF2073}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

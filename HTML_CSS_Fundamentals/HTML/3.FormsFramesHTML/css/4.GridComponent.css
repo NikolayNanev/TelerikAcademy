@@ -1,0 +1,101 @@
+table {
+    border-collapse:collapse;
+    border-radius: 20px;
+}
+            
+thead, tfoot {
+    background-color: #CCCCCC;
+}
+            
+tr {
+    border-color:Blue;}
+            
+td {
+    border-color: #0000FF;
+}
+            
+td.footer {
+    border:none;
+}
+            
+.active {
+    border: 1px solid red; 
+    border-width: 1px;
+}
+            
+.style1 {
+    width: 275px;
+    border-color: #0000FF;
+}
+            
+.style2 {
+    width: 160px;
+    border-color: #0000FF;
+}
+            
+.style3 {
+    width: 181px;
+    border-color: #0000FF;
+}
+            
+.style4 {
+    width: 153px;
+    border-color: #0000FF;
+}
+             
+#btn {
+    background-image: url('btn.png');
+    color: #00FFFF;
+    height: 22px; 
+    width: 22px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+            
+#btn1 {
+    background-image: url('btn 1.png');
+    color: #00FFFF;
+    height: 22px; 
+    width: 22px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+            
+#btn2 {
+    background-image: url('btn 2.png');
+    color: #00FFFF;
+    height: 22px; 
+    width: 22px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+            
+#btn3 {
+    background-image: url('btn 3.png');
+    color: #00FFFF;
+    height: 22px; 
+    width: 22px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+            
+#btn4 {
+    background-image: url('btn 4.png');
+    color: #00FFFF;
+    height: 23px; 
+    width: 23px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+            
+#numberOfpages {
+    width: 50px;
+}
+
+.pages {
+    text-align: right;
+}
+            
+td.pages {
+    border:none;
+}

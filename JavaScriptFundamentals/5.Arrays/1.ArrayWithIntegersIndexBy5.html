@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Write a script that allocates array of 20 integers and 
+        initializes each element by its index multiplied by 5. 
+        Print the obtained array on the console.
+    </title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <a href="#" onclick="executeScript()"> Allocate array with it's elements multiplied by 5</a>
+    
+    <div id="js-console"></div>
+
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function executeScript() {
+            var arrayElements_20Factor_5 = allocateArray(20, 5);
+            var joinArray = arrayElements_20Factor_5.join(", ");
+
+            jsConsole.writeLine(joinArray);
+        }
+
+        function allocateArray(lengthOfArray, multiplyFactor) {
+
+            var arrayIntegers = [];
+
+            for (var index = 0; index < lengthOfArray; index++) {
+                arrayIntegers[index] = index * multiplyFactor;
+            }
+
+            return arrayIntegers;
+        }
+    </script>
+</body>
+</html>

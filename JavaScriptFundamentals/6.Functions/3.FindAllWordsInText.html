@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Write a function that finds all the occurrences of word in a text
+           - The search can case sensitive or case insensitive
+           - Use function overloading
+    </title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        #text {
+            display: none;
+        }
+    </style>
+</head>
+<body>   
+    <label for="inputWord">Searched word: </label>
+    <input id="inputWord" type="text" />
+    <br />
+    <label for="caseSensitive">Case sensitive: </label>
+    <input id="caseSensitive" type="checkbox" />    
+    <br />
+
+    <a href="#" id="findOccureFunc">Finds occurrences of word</a>
+    <a href="#" id="showHideDiv">Show/Hide text</a>
+       
+    <div id="text">
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tellus ante, porta quis orci dignissim, 
+            fermentum venenatis nisi. Nulla id nisl turpis. Aliquam sit amet aliquet mi, vel euismod velit.
+             Sed eu velit lorem. Morbi eu lectus commodo, pulvinar tellus ac, commodo tellus. In quam purus, 
+            porttitor vitae odio vitae, consequat accumsan turpis. Nunc malesuada sem ante, non dictum mi tristique a. 
+            Integer id cursus risus. Duis dapibus, velit a condimentum mollis, eros neque consectetur ligula, 
+            non fermentum ipsum justo at magna.
+            Nulla lobortis condimentum ipsum non mollis. Proin felis dolor, condimentum vel ante id, 
+            placerat semper ipsum. Maecenas ornare erat venenatis volutpat ornare. Aenean vitae justo neque. 
+            Ut et elit mattis, laoreet ante non, interdum ipsum. Pellentesque magna nibh, 
+            fringilla quis urna vestibulum, porttitor luctus risus. Nam urna diam, 
+            sodales fermentum est pellentesque, malesuada placerat metus. Curabitur volutpat arcu non leo vulputate, 
+            nec faucibus metus blandit. Donec at iaculis erat. Donec quis ipsum sed turpis hendrerit lobortis vel ut ipsum. 
+            Curabitur mi erat, posuere sit amet vehicula et, cursus ut nulla. Nam rhoncus pellentesque nulla, vel accumsan purus.
+            Mauris auctor enim eget luctus pellentesque.
+            Nam feugiat, felis et pulvinar consectetur, ante massa fermentum diam, 
+            vel pharetra magna est quis nisl. Aliquam at suscipit velit. 
+            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
+            Ut augue quam, tempus et facilisis ac, eleifend at nunc. Pellentesque viverra mi sem, 
+            nec rhoncus velit pulvinar sit amet. Cras elit libero, congue a porttitor vel, feugiat non nulla.
+            Quisque a mi sit amet mi aliquet rutrum sit amet ut arcu. Cras eget tristique lectus. 
+            Sed vel justo sit amet tortor viverra malesuada vel id velit. Interdum et malesuada 
+            fames ac ante ipsum primis in faucibus. Curabitur in odio turpis. Mauris posuere, 
+            neque quis sagittis mattis, purus sem gravida nibh, ac sagittis mauris tortor eget libero. 
+            Morbi sit amet erat hendrerit, faucibus diam et, molestie lorem. Sed fermentum, enim sed vulputate vulputate, 
+            augue diam rhoncus massa, vitae iaculis ligula ligula suscipit lorem. Sed ante ipsum,
+            rutrum ac consectetur eu, congue id tellus.
+    </div>
+    <br />
+    
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function executeMainCode() {
+            var searchedWord = jsConsole.read("#inputWord");
+            var searchedText = jsConsole.read("#text");
+            var isCaseSensitive = isBoxChecked("caseSensitive");
+
+            if (searchedWord === "") {
+                jsConsole.writeLine("Bad input!");
+            }
+            else {
+                if (isCaseSensitive == true) {
+                    findOccurrenceOfWord(searchedWord, searchedText, true);
+                }
+                else {
+                    findOccurrenceOfWord(searchedWord, searchedText);
+                }
+
+                jsConsole.writeLine();
+            }
+
+            function findOccurrenceOfWord(word, text, isCaseSensitive) {
+                caseSensitive = caseSensitive || false;
+                var occurrenceOfWord = 0;
+             
+                var textWithoutPunctuation = text.                      //Remove all punctuation
+                    replace(/[\.,-\/#!$%\^&\*;:{}=\-_`~()]/g, "").
+                    replace(/\s{2,}/g, " ");
+
+                if (isCaseSensitive === true) {
+                    occurrenceOfWord = countAlgorithm(word, textWithoutPunctuation);
+
+                    printResults(occurrenceOfWord);
+                }
+                else {
+                    var lowerCaseWord = word.toLowerCase();
+                    var lowerCaseText = textWithoutPunctuation.toLowerCase();
+
+                    occurrenceOfWord = countAlgorithm(lowerCaseWord, lowerCaseText);
+
+                    printResults(occurrenceOfWord);
+                }
+
+                function countAlgorithm(wordToCount, textToCountIn) {
+                    wordToCount = ' ' + wordToCount + ' ';      //Without the two ' ' the algorithm will search for substrings;
+                    var wordLength = wordToCount.length;
+                    
+                    var count = 0;
+                    var index = textToCountIn.indexOf(wordToCount, index);
+                    
+                    while (index != -1) {
+                        count++;
+                        index += wordLength;
+                        index = textToCountIn.indexOf(wordToCount, index);
+                    }
+
+                    return count;
+                }
+
+                function printResults(timesOccurred) {
+                    var timeOrTimes = (timesOccurred === 1) ? 'time' : 'times';
+
+                    if (isCaseSensitive === true) {
+                        jsConsole.writeLine('Case sensitive search:');
+                    }
+                    else {
+                        jsConsole.writeLine('Case insensitive search:');
+                    }
+                                        
+                    jsConsole.writeLine('The word "' + word +
+                        '" occurrences : ' + timesOccurred + ' ' + timeOrTimes);
+                }
+            }
+
+            function isBoxChecked(idOfBox) {
+                if (document.getElementById(idOfBox).checked == true) {
+                    return true;
+                }
+                else {
+
+                    return false;
+                }
+            }
+        }
+
+        function showOrHideDiv() {
+            if (document.getElementById("text").style.display == "block") {
+                document.getElementById("text").style.display = "none";
+            }
+            else {
+                document.getElementById("text").style.display = "block";
+            }
+        }
+
+        document.getElementById("findOccureFunc").onclick = executeMainCode;
+        document.getElementById("showHideDiv").onclick = showOrHideDiv;      
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Write an expression that checks for given integer if its third digit (right-to-left) is 7. E. g. 1732 -->> true.
+    </title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="inputNumber">Input number: </label>
+    <input type="text" id="inputNumber" />
+    <br />
+
+    <a href="#" onclick="findIfDigitIsCertainValue()">Is the third digit '7'</a>
+    
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    
+    <script>
+        digitToCheck = 3; // 3rd digit is checked
+        firstDivisorOfNumber = Math.pow(10, digitToCheck - 1);
+        valueOfDigitToCheck = 7;
+
+        function findIfDigitIsCertainValue() {
+
+            var numberToCheck = jsConsole.readFloat("#inputNumber");
+
+            if (isNaN(numberToCheck)) {
+                jsConsole.writeLine("Bad input!");
+            }
+            else {
+                roundedNumber = Math.round( (Math.abs(numberToCheck) / firstDivisorOfNumber) - 0.5 );
+
+                if ((roundedNumber % 10) == valueOfDigitToCheck) {
+                    jsConsole.writeLine("The value of the third digit in '" + numberToCheck + "' is '" + valueOfDigitToCheck + "'");
+                }
+                else {
+                    jsConsole.writeLine("The value of the third digit in '" + numberToCheck + "' is NOT '" + valueOfDigitToCheck + "'");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+

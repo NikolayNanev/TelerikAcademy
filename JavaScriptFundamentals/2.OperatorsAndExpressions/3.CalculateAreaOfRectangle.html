@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Write an expression that calculates rectangle’s area by given width and height.
+    </title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="widthOfRectangle">Width of rectangle: </label>
+    <input type="text" id="widthOfRectangle" />
+    <br />
+
+    <label for="heightOfRectangle">Height of rectangle: </label>
+    <input type="text" id="heightOfRectangle" />
+    <br />
+
+    <a href="#" onclick="findArea()">Find area of rectangle</a>
+    
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+
+    <script>
+
+        function findArea() {
+            var width = jsConsole.readFloat("#widthOfRectangle");
+            var height = jsConsole.readFloat("#heightOfRectangle");
+
+            if (width <= 0 || height <= 0 || isNaN(width) || isNaN(height) ) {
+                jsConsole.writeLine("Bad input!");
+            }
+            else {
+                var areaOfRectangle = width * height;
+                jsConsole.writeLine("The area of the rectangle is: '" + areaOfRectangle + "'");
+            }         
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Write a function that makes a deep copy of an object:
+            -The function should work for both primitive and reference types
+    </title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function deepCopy(object) {
+            if (typeof object != "object") {
+                return object;
+            }
+            else {
+                var objectCopy = {};
+
+                for (var property in object) {
+                    objectCopy[property] = deepCopy(object[property]);
+                }
+
+                return objectCopy;
+            }
+        }
+       
+        //Primitive type object test
+        var str = '123';
+        var newString = deepCopy(str);
+
+        jsConsole.writeLine('Original string: \'' + str + '\' Deep copy: \'' + newString + '\'');
+        str = '3210'
+        jsConsole.writeLine('Changed string: \'' + str + '\' Deep copy: \'' + newString + '\'');
+        jsConsole.writeLine();
+
+        //Reference type object test
+        var obj = {
+            prop: {
+                inarProp: 5
+            },
+            toString: function() {
+                return this.prop.inarProp;
+            }
+        };
+        var newObject = deepCopy(obj);
+
+        jsConsole.writeLine('Original object: \'' + obj.prop.inarProp.toString() + '\' Deep copy: \'' + newObject + '\'');
+        obj.prop.inarProp = 100;
+        jsConsole.writeLine('Original object: \'' + obj.prop.inarProp.toString() + '\' Deep copy: \'' + newObject + '\'');
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.ReadsATextFilePrintsOnConsoleTheOddLines", "01.ReadsATextFilePrintsOnConsoleTheOddLines\01.ReadsATextFilePrintsOnConsoleTheOddLines.csproj", "{3891F8DD-DBD6-4AD9-ACF8-3AC4391E7089}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.ConcatenatesTwoTextFilesIntoNewTextFile", "02.ConcatenatesTwoTextFilesIntoNewTextFile\02.ConcatenatesTwoTextFilesIntoNewTextFile.csproj", "{AF5C94F8-5BD4-48C3-87F8-0C0351108BCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.InsertsLineNumbersInFrontOfEachLine", "03.InsertsLineNumbersInFrontOfEachLine\03.InsertsLineNumbersInFrontOfEachLine.csproj", "{26FDB537-84DA-4F80-B41D-E890837E9B77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.ComparesTwoTextFilesLineByLine", "04.ComparesTwoTextFilesLineByLine\04.ComparesTwoTextFilesLineByLine.csproj", "{FA36CA68-9AEB-4FCB-A081-E306F57F6334}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.ReadsFileAndFindsMatrixWithMaximalSum", "05.ReadsFileAndFindsMatrixWithMaximalSum\05.ReadsFileAndFindsMatrixWithMaximalSum.csproj", "{7E2CA584-E091-4793-B008-9904BCFB2E3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07.ReplacesOccurrencesOfStartWithFinish", "07.ReplacesOccurrencesOfStartWithFinish\07.ReplacesOccurrencesOfStartWithFinish.csproj", "{72F30FE0-82FF-4F19-9FF6-EDB23DFC4B8B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3891F8DD-DBD6-4AD9-ACF8-3AC4391E7089}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3891F8DD-DBD6-4AD9-ACF8-3AC4391E7089}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3891F8DD-DBD6-4AD9-ACF8-3AC4391E7089}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3891F8DD-DBD6-4AD9-ACF8-3AC4391E7089}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF5C94F8-5BD4-48C3-87F8-0C0351108BCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF5C94F8-5BD4-48C3-87F8-0C0351108BCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF5C94F8-5BD4-48C3-87F8-0C0351108BCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF5C94F8-5BD4-48C3-87F8-0C0351108BCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26FDB537-84DA-4F80-B41D-E890837E9B77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26FDB537-84DA-4F80-B41D-E890837E9B77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26FDB537-84DA-4F80-B41D-E890837E9B77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26FDB537-84DA-4F80-B41D-E890837E9B77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA36CA68-9AEB-4FCB-A081-E306F57F6334}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA36CA68-9AEB-4FCB-A081-E306F57F6334}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA36CA68-9AEB-4FCB-A081-E306F57F6334}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA36CA68-9AEB-4FCB-A081-E306F57F6334}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E2CA584-E091-4793-B008-9904BCFB2E3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E2CA584-E091-4793-B008-9904BCFB2E3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E2CA584-E091-4793-B008-9904BCFB2E3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E2CA584-E091-4793-B008-9904BCFB2E3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72F30FE0-82FF-4F19-9FF6-EDB23DFC4B8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72F30FE0-82FF-4F19-9FF6-EDB23DFC4B8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72F30FE0-82FF-4F19-9FF6-EDB23DFC4B8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72F30FE0-82FF-4F19-9FF6-EDB23DFC4B8B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,27 @@
+ul, ol {
+    margin: 5px;
+}
+
+#UpperRoman {
+    list-style:upper-roman;    
+}
+
+#LowerLatin {
+    list-style:lower-latin;
+}
+
+#Decimal {
+    list-style:decimal;
+}
+
+#Circle {
+    list-style:circle;
+}
+
+#Square {
+    list-style:square;
+}
+
+#Disc {
+    list-style:disc;
+}

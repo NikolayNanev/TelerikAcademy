@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Write a function to count the number of divs on the web page
+    </title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        #js-console {
+            float: left;
+        }
+
+        #divStack {
+            overflow: auto;
+            display: inline-block;
+            margin: 10px;         
+            height: 500px;
+            width: 400px;
+        }
+
+        #divStack div {
+            display: inline-block;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <a href="#" onclick="createDiv()">Create div</a>
+    <a href="#" onclick="countDivs()">Count divs on page</a>
+    <br />
+
+    <div id="js-console"></div>
+    <div id="divStack"></div>
+
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function createDiv() {
+            var newDiv = document.createElement("div");
+            var content = document.createTextNode("I'm a div!");
+            var outputOfNewDiv = document.getElementById("divStack");
+
+            outputOfNewDiv.appendChild(newDiv);
+            newDiv.appendChild(content);          
+        }
+
+        function countDivs() {
+            var countOfDivs = document.getElementsByTagName('div').length;
+            
+            var isOrAre = (countOfDivs === 1) ? 'is' : 'are';
+            var divOrDivs = (countOfDivs === 1) ? 'div' : 'divs';
+            jsConsole.writeLine('There ' + isOrAre + ' \'' + countOfDivs + '\' ' + divOrDivs + ' on the web page!');
+        }     
+    </script>
+</body>
+</html>

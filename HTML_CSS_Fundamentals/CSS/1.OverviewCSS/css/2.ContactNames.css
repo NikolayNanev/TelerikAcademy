@@ -1,0 +1,58 @@
+﻿.flag {
+    display: inline-block;
+    margin-right: 10px;
+	width: 25px;
+	height: 15px;
+	background:url(img/flags.png) no-repeat;
+}
+
+.flag.flag-de {background-position: -25px 0;}
+.flag.flag-gb {background-position: 0 -15px;}
+.flag.flag-mx {background-position: -25px -15px;}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid #e0dbdb;
+}
+
+td {
+    text-align:left;
+    border: 1px solid #e0dbdb;
+    border-width: 0px 1px 0px 1px;
+}
+
+th {
+    text-align:left;
+	color : white;
+	background-color: #6bd124;
+    border: 1px solid #e0dbdb;
+    border-width: 1px 1px 1px 1px;
+}
+
+thead{
+    
+}
+
+th[id="name"] {
+    width:160px;
+}
+
+th[id="city"] {
+    width:140px;
+}
+
+th[id="country"] {
+    width:130px;
+}
+
+th[id="promote"] {
+    width:100px;
+}
+
+tbody tr:nth-child(2n){
+    background-color: #f2f0f0;
+}
+
+tbody tr:nth-child(2n+1){
+    background-color:white;
+}

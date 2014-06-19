@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Write an if statement that examines two integer variables and exchanges 
+        their values if the first one is greater than the second one.
+    </title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="firstInputNumber">First input number: </label>
+    <input type="text" id="firstInputNumber" />
+    <br />
+
+    <label for="secondInputNumber">Second input number: </label>
+    <input type="text" id="secondInputNumber" />
+    <br />
+
+    <a href="#" onclick="switchNumbers()">Execute script</a>
+    
+    <div id="js-console"></div>
+
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function switchNumbers() {
+            var firstNumber = jsConsole.readInteger("#firstInputNumber");
+            var secondNumber = jsConsole.readInteger("#secondInputNumber");
+
+            if (isNaN(firstNumber) || isNaN(secondNumber)) {
+                jsConsole.writeLine("Bad input!");
+            }
+            else {
+                if (firstNumber > secondNumber) {
+                    var tempNumber = firstNumber;
+                    firstNumber = secondNumber;
+                    secondNumber = tempNumber;
+                }
+
+                jsConsole.writeLine("First number: " + firstNumber + "; Second number: " + secondNumber + ";");
+            }
+        }
+
+    </script>
+</body>
+</html>

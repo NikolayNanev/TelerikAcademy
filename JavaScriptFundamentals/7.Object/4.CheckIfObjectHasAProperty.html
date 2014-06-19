@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Write a function that checks if a given object contains a given property
+    </title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function hasProperty(object, property) {
+            
+            if (object.hasOwnProperty(property)) {
+                return true;
+            }
+            if ((property in object) === true) {
+                return true;
+            }
+
+            return false;
+        }
+
+        var obj = {
+            prop: 'none',
+            propar: 'none',
+            length: 7
+        };
+        var hasLengthProp = hasProperty(obj, 'length');
+        jsConsole.writeLine('Object has \'length\' property: ' + hasLengthProp);
+
+        var hasFireProp = hasProperty(obj, 'fire');
+        jsConsole.writeLine('Object has \'fire\' property: ' + hasFireProp);      
+    </script>
+</body>
+</html>

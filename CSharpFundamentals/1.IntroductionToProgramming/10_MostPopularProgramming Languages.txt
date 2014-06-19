@@ -1,0 +1,50 @@
+Source:http://www.siliconindia.com/shownews/10_Most_Popular_Programming_Languages-nid-106545-cid-2.html
+
+
+10. JavaScript
+
+JavaScript is an object-oriented scripting language that is smaller than Java. Being a client-side language, it runs in the web browser on the client-side with a simplified set of commands, easier code and no need for compilation.
+JavaScript is simple to learn and is the tenth most widely used programming language. It is used in millions of web pages to authenticate forms, detect browsers and improve design, and it is easier to run these functions as it is embedded into HTML.
+
+9. Perl
+
+Being a high-level programming language, its emphasis lies in code readability and clear syntax. It combines Object-oriented and functional programming styles, and is often used as a scripting language. Perl is an open-source language used widely to process text through CGI programs.
+It is used extensively to write Web server programs for a variety of tasks. Learning some form of scripting language, such as Perl or PHP is critical if you are doing Web apps.
+
+
+8. Python
+
+This is an event-driven programming language which is extensively used by Google because of its simplicity. It is managed by the Python SoftwareFoundation.
+
+7. Visual Basic
+
+This is an event-driven programming language which is implemented on Microsoft’s .Net framework.It was designed by Microsoft to be easy to learn and use.
+
+6. PHP
+
+This language is especially suited for Web development because of it easy embedding into HTML pages. It is an open-source, server-side, cross-platform, interpretive HTML scripting language
+It is a popular language with high-speed scripting with caching, augmented with compiled code plug-ins.
+
+5. Objective-C
+
+This object-oriented programming language created first by Brad Cox and Tom Love at their company Stepstone in the early 1980s, adds Smalltalk-like messaging to the C programming language.
+This language is most used on the Apple iOS and Mac OS X. Objective-C is the principal language used for Apple's Cocoa API as well.
+
+4. C++
+
+C++ is a general purpose multi-paradigm spanning compiled language that has both high-level and low-level languages’ features. It was started as an enhancement to the C programming language, Bjarne Stroustrup in 1979.
+It is one of the most popular programming languages with application domains including systems software, application software, server and client applications, and entertainment software such as video games.  The language has also greatly influenced many other popular programming languages, such as C# and Java.
+
+3. C#
+
+This general-purpose programming language developed by Microsoft evolved from C and C++ as a part of the software company’s .NET initiative.
+This language is an essential part of the .NET framework, so developers who use Microsoft heavily will find it critical to learn.
+
+2. C
+
+C, a general purpose programming language built by Dennis Ritchie when he was a part of Bell Telephone labs, is the base of C++ and other programming languages. It was built to work with the Unix operating system.
+C is one of the most widely used programming languages of all time, and ranked second on the list. “Learning C is crucial. Once you learn C, making the jump to Java or C# is fairly easy, because a lot of the syntax is common. Also, a lot of C syntax is used in scripting languages.
+
+1. Java
+An object-oriented programming language developed in the late 1990s by James Gosling and colleagues at Sun Microsystems.
+This “beautiful” programming language is central for any non-Microsoft developer, i.e. any developer who focuses on the non-.NET experience. It is mostly derived from C and C++ but has a more basic object model.

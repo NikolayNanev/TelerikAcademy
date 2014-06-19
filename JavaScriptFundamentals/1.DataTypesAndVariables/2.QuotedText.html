@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Create a string variable with quoted text in it. For example: "How you doin'?", Joey said.
+    </title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var quotedString = '"How you doin\'?",\n Joey said.';
+        var clockString = "It's five o'clock!";
+        var htmlTagString = '<A href="index.html">';
+
+        jsConsole.writeLine(quotedString);
+        jsConsole.writeLine(clockString);
+        jsConsole.writeLine(htmlTagString); //not printed on console!!             
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Write script that asks for a digit and depending on the input shows the name of that digit (in English) 
+        using a switch statement.
+    </title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="inputDigit">Input a digit: </label>
+    <input type="text" id="inputDigit" />
+    <br />
+
+    <a href="#" onclick="printNameOfDigit()">Name digit</a>
+    
+    <div id="js-console"></div>
+
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function printNameOfDigit() {
+            var inputDigit = jsConsole.readInteger("#inputDigit");
+
+            if (isNaN(inputDigit)) {
+                jsConsole.writeLine("Bad input!");
+            }
+            else if (inputDigit.toString().length != 1 ) {
+                jsConsole.writeLine("Please input only one positive digit!");
+            }
+            else {
+                switch (inputDigit) {
+
+                    case 0: jsConsole.writeLine("Zero"); break;
+                    case 1: jsConsole.writeLine("One"); break;
+                    case 2: jsConsole.writeLine("Two"); break;
+                    case 3: jsConsole.writeLine("Three"); break;
+                    case 4: jsConsole.writeLine("Four"); break;
+                    case 5: jsConsole.writeLine("Five"); break;
+                    case 6: jsConsole.writeLine("Six"); break;
+                    case 7: jsConsole.writeLine("Seven"); break;
+                    case 8: jsConsole.writeLine("Eight"); break;
+                    case 9: jsConsole.writeLine("Nine"); break;
+                    default: jsConsole.writeLine("Bad input!"); break;
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

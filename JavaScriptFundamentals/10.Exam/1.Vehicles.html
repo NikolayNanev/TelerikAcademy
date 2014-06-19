@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        function solve(params) {
+            var S = params[0] | 0;
+            var count = 0;
+
+            var truck = (S / 10) | 0;
+            var car = (S / 4) | 0;        
+            var trike = (S / 3) | 0;
+
+            for (var i = 0; i <= truck; i++) {
+                for (var j = 0; j <= car; j++) {
+                    for (var k = 0; k <= trike; k++) {
+                        var sum = i * 10 + j * 4 + k * 3;
+                        
+                        if (sum === S) {
+                            count++;
+                        }
+                    }                   
+                }           
+            }
+
+            console.log(count);
+        }
+        str = '40';
+        solve(str);
+
+
+        /*
+        i: 0
+j: 0
+k: 0
+count: 0
+        */
+    </script>
+</body>
+</html>

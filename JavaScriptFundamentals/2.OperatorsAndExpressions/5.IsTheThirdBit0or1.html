@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Write a boolean expression for finding if the bit 3 (counting from 0) of a given integer is 1 or 0.
+    </title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="inputNumber">Input number: </label>
+    <input type="text" id="inputNumber" />
+    <br />
+
+    <a href="#" onclick="determineTheValueOfCertainBit()">Is the third bit '0' or '1'</a>
+    
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    
+    <script>
+        bitToCheck = 3; // 3th bit is checked (counting from 0)
+        numberForBitConjunction = Math.pow(2, bitToCheck);
+
+        function determineTheValueOfCertainBit() { 
+
+            var numberToCheck = jsConsole.readFloat("#inputNumber");
+
+            if (isNaN(numberToCheck)) {
+                jsConsole.writeLine("Bad input!");
+            }
+            else {
+                var resultOfBitwiseOperation = numberToCheck & numberForBitConjunction;
+
+                if (resultOfBitwiseOperation === 0) {
+                    jsConsole.writeLine("The third bit is '0'");
+                }
+                else {
+                    jsConsole.writeLine("The third bit is '1'");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Write a script that shows the sign (+ or -) of the product of three real numbers without calculating it. 
+        Use a sequence of if statements.
+    </title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="firstInputNumber">First input number: </label>
+    <input type="text" id="firstInputNumber" />
+    <br />
+
+    <label for="secondInputNumber">Second input number: </label>
+    <input type="text" id="secondInputNumber" />
+    <br />
+
+    <label for="thirdInputNumber">Third input number: </label>
+    <input type="text" id="thirdInputNumber" />
+    <br />
+
+    <a href="#" onclick="determineSignOfProductOfThreeNumbers()">Execute script</a>
+    
+    <div id="js-console"></div>
+
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function determineSignOfProductOfThreeNumbers() {
+            var firstNumber = jsConsole.readInteger("#firstInputNumber");
+            var secondNumber = jsConsole.readInteger("#secondInputNumber");
+            var thirdNumber = jsConsole.readInteger("#thirdInputNumber");
+
+            if (isNaN(firstNumber) || isNaN(secondNumber) || isNaN(thirdNumber)) {
+                jsConsole.writeLine("Bad input!");
+            }
+            else {
+                if ((firstNumber == 0) || (secondNumber == 0) || (thirdNumber == 0)) {
+                    jsConsole.writeLine("The product of the numbers is 0!");
+                }
+                else if (((firstNumber > 0) && (secondNumber > 0) && (thirdNumber > 0))
+                    || ((firstNumber < 0) && (secondNumber < 0) && (thirdNumber > 0))
+                    || ((firstNumber > 0) && (secondNumber < 0) && (thirdNumber < 0))
+                    || ((firstNumber < 0) && (secondNumber > 0) && (thirdNumber < 0))) {
+                    jsConsole.writeLine("The sign of the product of the numbers is '+'!");
+                }
+
+                else if (((firstNumber < 0) && (secondNumber > 0) && (thirdNumber > 0))
+                    || ((firstNumber > 0) && (secondNumber < 0) && (thirdNumber > 0))
+                    || ((firstNumber > 0) && (secondNumber > 0) && (thirdNumber < 0))
+                    || ((firstNumber < 0) && (secondNumber < 0) && (thirdNumber < 0))) {
+                    jsConsole.writeLine("The sign of the product of the numbers is '-'!");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

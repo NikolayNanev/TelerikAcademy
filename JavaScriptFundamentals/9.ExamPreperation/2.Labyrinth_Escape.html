@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        function Solve(inputArray) {
+            var args0 = splitNumbers(inputArray[0]);
+            var N = args0[0];
+            var M = args0[1];
+
+            var args1 = splitNumbers(inputArray[1]);
+            var R = args1[0];
+            var C = args1[1];
+
+            var field = createFieldWithValues();
+            var directions = readDirections(inputArray);
+
+            var sumOfNumbers = 0;
+            var countMoves = 0;
+
+            var curentDirection = directions[R][C];
+
+            while (true) {
+                if (curentDirection === 'X') {
+                    return String("lost " + countMoves);
+                }
+
+                sumOfNumbers += field[R][C];
+                countMoves++;
+                directions[R][C] = 'X';
+
+                if (curentDirection === 'r') {
+                    C++;
+                }
+                else if (curentDirection === 'l') {
+                    C--;
+                }
+                else if (curentDirection === 'u') {
+                    R--;
+                }
+                else if (curentDirection === 'd') {
+                    R++;
+                }
+                if (R < 0 || R >= N ||
+                   C < 0 || C >= M) {
+                    return String("out " + sumOfNumbers);
+                }
+
+
+                curentDirection = directions[R][C];
+            }
+
+            function readDirections(array) {
+                var directions = [];
+
+                for (var m = 2; m < N + 2; m++) {
+                    directions[m - 2] = splitDirection(array[m]);
+                }
+
+                return directions;
+            }
+
+            function createFieldWithValues() {
+                var field = [];
+                var value = 1;
+
+                for (var j = 0; j < N; j++) {
+                    field[j] = [];
+
+                    for (var k = 0; k < M; k++) {
+                        field[j][k] = value++;
+                    }
+                }
+
+                return field;
+            }
+
+            function splitNumbers(element) {
+                var numbers = element.split(' ').map(Number);
+                return numbers;
+            }
+
+            function splitDirection(element) {
+                var directions = element.split('');
+                return directions;
+            }
+        }
+
+        args = [
+         "3 4",
+         "1 3",
+         "lrrd",
+         "dlll",
+         "rddd"];
+
+        var str = Solve(args);
+        console.log(str);
+
+    </script>
+</body>
+</html>

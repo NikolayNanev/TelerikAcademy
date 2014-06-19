@@ -1,0 +1,56 @@
+body, html, div, nav, ul, li, a, aside, h1, h2 {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px; }
+
+#wrapper {
+  width: 960px;
+  padding: 5px; }
+  #wrapper header {
+    background-image: url(images/header-bg.png);
+    background-repeat: repeat-x;
+    padding: 25px; }
+    #wrapper header #title {
+      float: left; }
+      #wrapper header #title h1 {
+        font-size: 34px;
+        color: #EEFFEE; }
+      #wrapper header #title h2 {
+        font-size: 14px;
+        color: #C0C0C0; }
+    #wrapper header nav {
+      text-align: right;
+      height: 50px;
+      margin-top: 16px; }
+      #wrapper header nav ul {
+        list-style: none; }
+        #wrapper header nav ul li {
+          margin-left: 20px;
+          display: inline-block;
+          font-size: 18px;
+          color: #CC6600; }
+  #wrapper #line {
+    color: #39C518;
+    background: #39C518;
+    width: 100%;
+    height: 5px; }
+  #wrapper #content {
+    margin: 25px 0px;
+    width: 80%;
+    float: left; }
+    #wrapper #content h1 {
+      font-size: 30px;
+      color: #59770E; }
+    #wrapper #content article {
+      color: #555555; }
+  #wrapper aside {
+    text-transform: uppercase;
+    margin-top: 25px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #59770E; }
+
+.clear {
+  clear: both; }
+

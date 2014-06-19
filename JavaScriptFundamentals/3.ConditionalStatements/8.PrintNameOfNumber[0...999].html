@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Write a script that converts a number in the range [0...999] to a text corresponding to its English pronunciation.
+    </title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="inputNumber">Input a number in range [0...999] : </label>
+    <input type="text" id="inputNumber" />
+    <br />
+
+    <a href="#" onclick="printNameOfNumber()">Name number</a>
+    
+    <div id="js-console"></div>
+
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function printNameOfNumber() {
+            var inputNumber = jsConsole.readInteger("#inputNumber");
+
+            if (isNaN(inputNumber)) {
+                jsConsole.writeLine("Bad input!");
+            }
+            else if (inputNumber > 999 || inputNumber < 0) {
+                jsConsole.writeLine("The input number is out of the range [0...999]!");
+            }
+            else if (inputNumber.toString().length == 1) {
+                printOneDigitNumber(inputNumber);
+            }
+            else if (inputNumber.toString().length == 2) {
+                printTwoDigitNumber(inputNumber);      
+            }
+            else if (inputNumber.toString().length == 3) {
+                printThreeDigitNumber(inputNumber);
+            }
+
+            function printOneDigitNumber(number) {
+                switch (number) {
+                    case 0: jsConsole.writeLine("Zero"); break;
+                    case 1: jsConsole.writeLine("One"); break;
+                    case 2: jsConsole.writeLine("Two"); break;
+                    case 3: jsConsole.writeLine("Three"); break;
+                    case 4: jsConsole.writeLine("Four"); break;
+                    case 5: jsConsole.writeLine("Five"); break;
+                    case 6: jsConsole.writeLine("Six"); break;
+                    case 7: jsConsole.writeLine("Seven"); break;
+                    case 8: jsConsole.writeLine("Eight"); break;
+                    case 9: jsConsole.writeLine("Nine"); break;
+                    default: jsConsole.writeLine("Bad input!"); break;
+                }
+            }
+            function printOneDigitNumberSmall(number) {
+                switch (number) {
+                    case 0: jsConsole.writeLine(""); break;
+                    case 1: jsConsole.writeLine("one"); break;
+                    case 2: jsConsole.writeLine("two"); break;
+                    case 3: jsConsole.writeLine("three"); break;
+                    case 4: jsConsole.writeLine("four"); break;
+                    case 5: jsConsole.writeLine("five"); break;
+                    case 6: jsConsole.writeLine("six"); break;
+                    case 7: jsConsole.writeLine("seven"); break;
+                    case 8: jsConsole.writeLine("eight"); break;
+                    case 9: jsConsole.writeLine("nine"); break;
+                    default: jsConsole.writeLine("Bad input!"); break;
+                }
+            }
+
+            function printTwoDigitNumber(number) {
+                if (number < 20) {
+                    printTwoDigitNumber_10_to_19(number);
+                }
+                else {
+                    printTwoDigitNumber_20_to_99(number);
+                }
+            }
+            function printTwoDigitNumber_10_to_19(number) {
+                switch (number) {
+                    case 10: jsConsole.writeLine("Ten"); break;
+                    case 11: jsConsole.writeLine("Eleven"); break;
+                    case 12: jsConsole.writeLine("Twelve"); break;
+                    case 13: jsConsole.writeLine("Thirteen"); break;
+                    case 14: jsConsole.writeLine("Fourteen"); break;
+                    case 15: jsConsole.writeLine("Fifteen"); break;
+                    case 16: jsConsole.writeLine("Sixteen"); break;
+                    case 17: jsConsole.writeLine("Seventeen"); break;
+                    case 18: jsConsole.writeLine("Eighteen"); break;
+                    case 19: jsConsole.writeLine("Nineteen"); break;
+                    default: jsConsole.writeLine("Bad input!"); break;
+                }
+            }
+            function printTwoDigitNumber_20_to_99(number) {
+                var firstDigit = Math.round((number / Math.pow(10, 0)) - 0.5) % 10;
+                var secondDigit = Math.round((number / Math.pow(10, 1)) - 0.5) % 10;
+
+                switch (secondDigit) {
+                    case 2: jsConsole.write("Twenty"); break;
+                    case 3: jsConsole.write("Thirty"); break;
+                    case 4: jsConsole.write("Fourty"); break;
+                    case 5: jsConsole.write("Fifty"); break;
+                    case 6: jsConsole.write("Sixty"); break;
+                    case 7: jsConsole.write("Seventy"); break;
+                    case 8: jsConsole.write("Eighty"); break;
+                    case 9: jsConsole.write("Ninety"); break;
+                    default: jsConsole.write(" Bad input!"); break;
+                }
+
+                switch (firstDigit) {
+                    case 0: jsConsole.writeLine(""); break;
+                    case 1: jsConsole.writeLine(" one"); break;
+                    case 2: jsConsole.writeLine(" two"); break;
+                    case 3: jsConsole.writeLine(" three"); break;
+                    case 4: jsConsole.writeLine(" four"); break;
+                    case 5: jsConsole.writeLine(" five"); break;
+                    case 6: jsConsole.writeLine(" six"); break;
+                    case 7: jsConsole.writeLine(" seven"); break;
+                    case 8: jsConsole.writeLine(" eight"); break;
+                    case 9: jsConsole.writeLine(" nine"); break;
+                    default: jsConsole.writeLine(" Bad input!"); break;
+                }
+            }
+
+            function printThreeDigitNumber(number) {
+                var firstDigit = Math.round((number / Math.pow(10, 0)) - 0.5) % 10;
+                var secondDigit = Math.round((number / Math.pow(10, 1)) - 0.5) % 10;
+                var thirdDigit = Math.round((number / Math.pow(10, 2)) - 0.5) % 10;
+
+                switch (thirdDigit) {
+                    case 1: jsConsole.write("One hundred"); break;
+                    case 2: jsConsole.write("Two hundred"); break;
+                    case 3: jsConsole.write("Three hundred"); break;
+                    case 4: jsConsole.write("Four hundred"); break;
+                    case 5: jsConsole.write("Five hundred"); break;
+                    case 6: jsConsole.write("Six hundred"); break;
+                    case 7: jsConsole.write("Seven hundred"); break;
+                    case 8: jsConsole.write("Eight hundred"); break;
+                    case 9: jsConsole.write("Nine hundred"); break;
+                    default: jsConsole.writeLine(" Bad input!"); break;
+                }
+
+                var tempNumber = number - thirdDigit * Math.pow(10, 2);
+
+                if (tempNumber != 0) {
+                    jsConsole.write(" and ");
+
+                    if (tempNumber.toString().length == 1) {
+                        printOneDigitNumberSmall(tempNumber);
+                    }
+                    else if (tempNumber.toString().length == 2) {
+                        if (tempNumber < 20) {
+                            printThreeDigitNumber_10_to_19(tempNumber);
+                        }
+                        else {
+                            printThreeDigitNumber_20_to_99(tempNumber);
+                        }
+                    }
+                }
+                else {
+                    jsConsole.writeLine("");
+                }
+            }
+            function printThreeDigitNumber_10_to_19(number) {
+                switch (number) {
+                    case 10: jsConsole.writeLine(" ten"); break;
+                    case 11: jsConsole.writeLine(" eleven"); break;
+                    case 12: jsConsole.writeLine(" twelve"); break;
+                    case 13: jsConsole.writeLine(" thirteen"); break;
+                    case 14: jsConsole.writeLine(" fourteen"); break;
+                    case 15: jsConsole.writeLine(" fifteen"); break;
+                    case 16: jsConsole.writeLine(" sixteen"); break;
+                    case 17: jsConsole.writeLine(" seventeen"); break;
+                    case 18: jsConsole.writeLine(" eighteen"); break;
+                    case 19: jsConsole.writeLine(" nineteen"); break;
+                    default: jsConsole.writeLine(" Bad input!"); break;
+                }
+            }
+            function printThreeDigitNumber_20_to_99(number) {
+                var firstDigit = Math.round((number / Math.pow(10, 0)) - 0.5) % 10;
+                var secondDigit = Math.round((number / Math.pow(10, 1)) - 0.5) % 10;
+
+                switch (secondDigit) {
+                    case 2: jsConsole.write(" twenty"); break;
+                    case 3: jsConsole.write(" thirty"); break;
+                    case 4: jsConsole.write(" fourty"); break;
+                    case 5: jsConsole.write(" fifty"); break;
+                    case 6: jsConsole.write(" sixty"); break;
+                    case 7: jsConsole.write(" seventy"); break;
+                    case 8: jsConsole.write(" eighty"); break;
+                    case 9: jsConsole.write(" ninety"); break;
+                    default: jsConsole.write(" Bad input!"); break;
+                }
+
+                switch (firstDigit) {
+                    case 0: jsConsole.writeLine(""); break;
+                    case 1: jsConsole.writeLine(" one"); break;
+                    case 2: jsConsole.writeLine(" two"); break;
+                    case 3: jsConsole.writeLine(" three"); break;
+                    case 4: jsConsole.writeLine(" four"); break;
+                    case 5: jsConsole.writeLine(" five"); break;
+                    case 6: jsConsole.writeLine(" six"); break;
+                    case 7: jsConsole.writeLine(" seven"); break;
+                    case 8: jsConsole.writeLine(" eight"); break;
+                    case 9: jsConsole.writeLine(" nine"); break;
+                    default: jsConsole.writeLine(" Bad input!"); break;
+                }
+            }
+        }        
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Write a script that prints all the numbers from 1 to N</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="inputNumber">Input an integer number N (N >= 1): </label>
+    <input type="text" id="inputNumber" />
+    <br />
+
+    <a href="#" onclick="executeScript()">Print numbers from 1 to N</a>
+    
+    <div id="js-console"></div>
+
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function executeScript() {
+            var numberN = jsConsole.readInteger("#inputNumber");
+
+            if (isNaN(numberN) || numberN < 1) {
+                jsConsole.writeLine("Bad input!");
+            }
+            else {
+                printIntNumbersFrom1ToN(numberN);
+            }
+
+            function printIntNumbersFrom1ToN(lastNumber) {
+
+                jsConsole.writeLine("Numbers from 1 to " + lastNumber + ":");
+
+                var arrayWithNumbers = [];
+
+                for (var index = 0; index < lastNumber; index++) {
+                    arrayWithNumbers[index] = index + 1;
+                }
+                var stringOfNumbers = arrayWithNumbers.join(', ');
+                jsConsole.writeLine(stringOfNumbers);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+body {
+    padding:3px;
+    margin:3px;
+}
+
+table {
+    border-collapse:collapse; 
+    width:auto;
+}
+
+td {
+    padding:1px;
+    border:1px solid #000; 
+    width:auto
+}
+
+head, thead {
+    font-weight: bold;
+    text-align:center;
+}
+
+tbody {
+    text-align:center;
+}

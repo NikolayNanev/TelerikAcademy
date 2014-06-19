@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        function Solve(input) {
+            var N = parseInt(input[0]);
+
+            var tempStartIndex = 0;
+            var currentSum = parseInt(input[1]);
+            var maxSum = parseInt(input[1]);
+
+            for (var i = 2; i < N; i++) {
+                currentSum += parseInt(input[i]);
+
+                if (parseInt(input[i]) > currentSum) {
+                    currentSum = parseInt(input[i]);
+                    tempStartIndex = i;
+                }
+
+                if (currentSum > maxSum) {
+                    maxSum = currentSum;
+                    startIndex = tempStartIndex;
+                    endIndex = i;
+                }
+            }
+
+            return maxSum;
+        }
+
+        //var input = ['8', '1', '6', '-9', '4', '4', '-2', '10', '-1'];
+        /*var input = ['9',
+        '-9',
+        '-8',
+        '-8',
+        '-7',
+        '-6',
+        '-5',
+        '-1',
+        '-7',
+        '-6',
+        ]*/
+        console.log(Solve(input));
+    </script>
+</body>
+</html>

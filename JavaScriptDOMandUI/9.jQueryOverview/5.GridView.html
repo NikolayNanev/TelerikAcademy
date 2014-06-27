@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Grid view</title>
+    <script src="libs/jquery-1.11.1-uncompressed.js"></script>
+    <link href="styles/5.GridView.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="grid-view-container">
+        <div id="grid-view-controls">
+            <label for="input-grid-columns">Input number of columns</label>
+            <input id="input-grid-columns" type="number" value="2"/>
+            <button id="input-rows-btn">Create input rows</button>
+            <button id="add-head-btn">Add head</button>
+            <button id="add-row-btn">Add row</button>
+        </div>
+
+        <div id="inputs-row"></div>
+
+        <div id="grid-view">
+            <table id="grid-view-table">
+                <thead id="table-head"></thead>
+                <tbody id="table-body"></tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script src="scripts/5.GridView.js"></script>
+</body>
+</html>

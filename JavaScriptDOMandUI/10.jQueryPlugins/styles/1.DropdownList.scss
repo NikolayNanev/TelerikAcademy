@@ -1,0 +1,24 @@
+ul {
+	list-style: none;
+
+	li {
+		list-style: none;
+		padding: 0;
+        margin: 1px 0 0 0;
+		color: white;
+        line-height: 30px;
+        text-align: center;
+		width: 100px;
+        height: 30px;
+	}
+
+	.dropdown-list-selection {
+		background-color: darkviolet;
+		border-radius: 5px;
+	}
+
+	.dropdown-list-option {
+		background-color: blueviolet;
+		border-radius: 2px;
+	}
+}

@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Shim for querySelector</title>
+    <script src="scripts/sizzle.js"></script>
+</head>
+<body>
+    <h3>Write a script that shims querySelector and querySelectorAll in older browsers</h3>
+    <div>
+        <ul>
+            <li>1</li>
+            <li id="test">2</li>
+        </ul>
+    </div>
+
+    <script src="scripts/4.ShimForQuerySelector.js"></script>
+
+    <script>
+        var lis = document.querySelectorAll('div ul li');
+        console.log(lis.length);
+
+        var idTest = document.querySelectorAll('#test');
+        console.log(idTest.length);
+
+        var none = document.querySelectorAll('form input');
+        console.log(none.length);
+    </script>
+</body>
+</html>

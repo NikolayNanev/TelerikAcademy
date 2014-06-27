@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Selects all the div nodes that are directly inside other div elements
+    </title>
+    <link href="styles/1.SelectDivsInsideDiv.css" rel="stylesheet" /> 
+    <script src="scripts/sizzle.js"></script>
+    <script src="scripts/4.ShimForQuerySelector.js"></script>
+</head>
+<body>
+    <div>
+        <h3>Write a script that selects all the div nodes that are directly inside other div elements</h3>
+        <ul> 
+            <li>Create a function using querySelectorAll()</li>
+            <li>Create a function using getElementsByTagName()</li>
+        </ul>
+    </div>
+
+    <a href="#" onclick="createDiv()">Create div</a>
+    <a href="#" onclick="selectDivsWithQuerySelectorAll()">querySelectorAll()</a>
+    <a href="#" onclick="selectDivsWithGetElementByTagName()">getElementByTagName()</a>
+    <br />
+
+    <div id="js-console"></div>
+    <div id="divCollector"></div>
+
+    <script src="scripts/js-console.js"></script>
+    <script src="scripts/1.SelectDivsInsideDiv.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+#table-container table {
+  border-collapse: collapse; }
+  #table-container table th, #table-container table td {
+    padding: 4px;
+    border: 1px solid #000;
+    text-align: center; }
+

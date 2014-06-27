@@ -1,0 +1,11 @@
+﻿#div-container {
+    position: absolute;
+    left: 30%;
+    top: 5%;
+    width: 500px;
+    height: 500px;
+}
+
+.random-div {
+    text-align: center;
+}

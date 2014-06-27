@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Drop down list</title>
+    <link href="styles/1.DropdownList.css" rel="stylesheet" />
+    <script src="libs/jquery-1.11.1.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <select id="dropdown" style="display: block">
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+            <option value="4">Four</option>
+            <option value="5">Five</option>
+        </select>
+    </div>
+
+    <script src="scripts/1.DropdownPlugin.js"></script>   
+    
+    <script>
+        $('#dropdown').dropdown();
+    </script>   
+</body>
+</html>

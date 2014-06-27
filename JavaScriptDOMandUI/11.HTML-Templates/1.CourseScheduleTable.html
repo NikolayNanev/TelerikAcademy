@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Course schedule</title>
+    <script src="libs/jquery-1.11.1.js"></script>  
+    <script src="libs/handlebars.min.js"></script>
+    <link href="styles/1.CourseScheduleTable.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="table-container"></div>
+    
+    <script id="table-template" type="text/x-handlebars">
+        <table>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Title</th>
+                    <th>Date #1</th>
+                    <th>Date #2</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                {{#each lecture}}
+                    <tr>
+                        <td>{{@index}}</td>
+                        <td>{{title}}</td>
+                        <td>{{firstDate}}</td>
+                        <td>{{secondDate}}</td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </script>
+
+    <script src="scripts/1.TableData.js"></script>
+    <script src="scripts/1.CourseScheduleTable.js"></script>
+</body>
+</html>

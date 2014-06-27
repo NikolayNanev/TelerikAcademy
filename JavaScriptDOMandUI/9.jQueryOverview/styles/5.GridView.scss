@@ -1,0 +1,30 @@
+#grid-view-container {
+	#grid-view-controls {
+		
+	}
+
+	#inputs-row {
+		input[type='text'] {
+			width: 75px;
+			height: 15px;
+		}
+	}
+
+	#grid-view {
+
+		padding: 10px;
+		padding-top: 25px;
+
+		#grid-view-table {
+			border-collapse: collapse;
+
+			th, td {
+				width: 50px; 
+				height: 15px;
+				padding: 4px;
+				border: 1px solid #000;
+				text-align: center;     
+			}
+		}
+	}
+}

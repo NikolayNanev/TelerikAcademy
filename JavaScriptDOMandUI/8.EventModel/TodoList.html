@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Todo list</title>
+    <link href="styles/TodoList.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="todo-list-container">
+        <form id="todo-list-form">
+            <header>
+                <span id="title">Todo list</span>
+            </header>
+            
+            <input type="text" id="task-content" placeholder="Input task to do"/>
+            <input type="button" id="add-task-button" value="add task"/>
+            <br />
+            <ul id="task-container">
+                <li id='task-template' class="task">
+                    <div class="button-container">
+                        <input class="button del-button" type="button" value="delete"/>   
+                        <input class="button hide-button" type="button" value="hide"/>
+                        <input class="button show-button" type="button" value="show"/>                                          
+                    </div>                  
+                </li>
+            </ul>
+        </form>   
+    </div>
+
+    <script src="scripts/TodoList.js"></script>
+</body>
+</html>

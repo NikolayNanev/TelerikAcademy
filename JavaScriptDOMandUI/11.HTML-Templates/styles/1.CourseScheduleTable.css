@@ -1,0 +1,28 @@
+﻿table {
+    font-family: Arial;
+    font-size: 12px;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid black;
+}
+
+th {
+    background-color: darkgray;
+    color: white;
+    font-weight: bold;
+    width: 200px;
+}
+
+td:first-child {
+    text-align: center;
+}
+
+    th:first-child {
+        width: 30px;
+    }
+
+tr:nth-child(2n + 1) {
+    background-color: lightgray;
+}

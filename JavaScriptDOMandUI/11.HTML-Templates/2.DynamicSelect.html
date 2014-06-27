@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Dynamic select</title>
+    <script src="libs/jquery-1.11.1.js"></script>
+    <script src="libs/handlebars.min.js"></script>
+</head>
+<body>
+    <div id="select-container"></div>
+    
+    <script id="select-template" type="text/x-handlebars">
+        <select class="select">
+            {{#each selectOption}}
+                {{dynamic_select_option}}
+            {{/each}}
+        </select>
+    </script>
+
+    <script src="scripts/2.SelectMenuData.js"></script>
+    <script src="scripts/2.DynamicSelect.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+﻿body {
+    padding: 0;
+    margin: 0;
+}
+
+.canvas {
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+    /*border: 1px solid black;*/
+}
+
+#man, #cycle {
+    float: left;
+}
